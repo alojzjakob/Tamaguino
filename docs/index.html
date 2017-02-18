@@ -1,0 +1,313 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Tamaguino - Tamagotchi clone for Arduino</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		
+		<meta property="og:type" content="article">
+                <meta property="og:title" content="Tamaguino">
+                <meta property="og:description" content="Tamagotchi clone for Arduino">
+                <meta property="og:image" content="https:///images/logo.png">
+
+                <meta name="twitter:card" content="summary">
+                <meta name="twitter:title" content="Tamaguino">
+                <meta name="twitter:description" content="Tamagotchi clone for Arduino">
+                <meta name="twitter:image" content="https:///images/logo.png">
+		
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<link rel="stylesheet" href="lib/lightbox2-master/dist/css/lightbox.min.css">
+	</head>
+	<body>
+
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							<li><a href="#intro">Welcome</a></li>
+							<li><a href="#overview">Intro</a></li>
+							<li><a href="#source">Source code</a></li>
+							<li><a href="#hardware">Hardware</a></li>
+							<li><a href="#advanced">Advanced</a></li>
+							<li><a href="#demo">Demo</a></li>
+							<li><a href="#about">About me</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Intro -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+						<div class="inner">
+							<h1 class="major">Tamaguino <img src="images/splash.png"/></h1>
+							<p>Tamagotchi clone for Arduino developed by <a href="https://jakobdesign.com" target="_blank">Alojz Jakob</a><br />
+							and released for free under the <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank">GNU General Public License</a>.</p>
+							<ul class="actions">
+								<li><a href="#overview" class="button scrolly">Learn more</a>&nbsp;&nbsp;&nbsp;&nbsp;or</li>
+								<li><a href="#source" class="button scrolly">I don't want to read, bring it on!</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- One -->
+					<section id="overview" class="wrapper style2 spotlights">
+						<section>
+						
+							<a href="images/tamagotchi.jpg" class="image" data-lightbox="overview-1" data-title="Original Tamagotchi"><img src="images/tamagotchi.jpg" alt="" data-position="center center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Why Tamagotchi clone?</h2>
+									<p>When I was a kid and went to primary school, something happened.</p>
+									<p>Invasion of cool egg-shaped digital pets!</p>
+									<p>Everyone had one. Some had original Bandai toys, some cheap chinese copies (which were better!)</p>
+									<ul class="actions">
+										<li><a href="https://en.wikipedia.org/wiki/Tamagotchi" target="_blank" class="button">Learn more</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a href="images/petmain.png" class="image" data-lightbox="overview-1" data-title="My project in c as a console application (faculty work)" ><img src="images/petmain.png" alt="" data-position="top center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>AJgotchi - Linux console application</h2>
+									<p>At faculty we had an assignment to create C application that will work in Linux terminal. This was my first attempt to create a PC clone of this popular toy.</p>
+									<p>(Serbian language)</p>
+									<ul class="actions">
+										<li><a href="http://os.etf.rs/POS/projekti/2006/jakob_alojz/" target="_blank" class="button">Source</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+					</section>
+
+				<!-- Two -->
+					<section id="source" class="wrapper style3 fade-up">
+						<div class="inner">
+							<h1 class="major">Tamaguino source</h1>
+							<p>Source code is freely available on GitHub. You can download zip package or clone the repository.</p>
+							<div class="features">
+								<section>
+									<span class="icon major fa-code"></span>
+									<h3>
+                                                                            <a href="https://github.com/alojzjakob/Tamaguino" target="_blank">Source on GitHub</a>
+									</h3>
+									<p></p>
+								</section>
+								<section>
+									<span class="icon major fa-download"></span>
+									<h3>
+                                                                            <a href="https://github.com/alojzjakob/Tamaguino/archive/master.zip" target="_blank">Download as zip</a>
+									</h3>
+									<p></p>
+								</section>
+								
+							</div>
+							
+						</div>
+					</section>
+					
+					
+					
+					<section id="hardware" class="wrapper style2 fade-up">
+						
+						<div class="inner">
+                                                                <h1 class="major">Hardware</h1>
+                                                                <h2>Breadboard wiring</h2>
+                                                                <p>In this example we will use Arduino UNO. On the image below you can see how your components should be wired:</p>
+                                                                <a href="images/tamaguino-breadboard.png" class="image" data-lightbox="hardware-1" data-title="Breadboard wiring">
+                                                                    <img src="images/tamaguino-breadboard.png" alt="" data-position="center center" style="width:50%;" />
+                                                                </a>
+                                                </div>
+                                        </section>
+					<section id="hardware-parts-list" class="wrapper style2 fade-up">
+                                                <div class="inner">
+                                                        <h2>Parts list</h2>
+                                                        <div class="table-wrapper">
+                                                                <table class="alt">
+                                                                        <thead>
+                                                                                <tr>
+                                                                                        <th>Image</th>
+                                                                                        <th>Name</th>
+                                                                                        <th>Quantity</th>
+                                                                                </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                                <tr>
+                                                                                        <td style="vertical-align: middle;">
+                                                                                            <a href="images/arduino-uno.png" class="image" data-lightbox="hardware-2" data-title="Arduino UNO">
+                                                                                                <img src="images/arduino-uno.png" alt="" data-position="center center" style="height:100px;" />
+                                                                                            </a>
+                                                                                        </td>
+                                                                                        <td style="vertical-align: middle;">Arduino UNO</td>
+                                                                                        <td style="vertical-align: middle;">1</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                        <td style="vertical-align: middle;">
+                                                                                            <a href="images/breadboard.png" class="image" data-lightbox="hardware-2" data-title="Breadboard">
+                                                                                                <img src="images/breadboard.png" alt="" data-position="center center" style="height:100px;" />
+                                                                                            </a>
+                                                                                        </td>
+                                                                                        <td style="vertical-align: middle;">Breadboard</td>
+                                                                                        <td style="vertical-align: middle;">1</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                        <td style="vertical-align: middle;">
+                                                                                            <a href="images/ssd1306.png" class="image" data-lightbox="hardware-2" data-title="SSD1306 OLED">
+                                                                                                <img src="images/ssd1306.png" alt="" data-position="center center" style="height:100px;" />
+                                                                                            </a>
+                                                                                        </td>
+                                                                                        <td style="vertical-align: middle;">SSD1306 128x64 OLED display (I<sup>2</sup>C version)</td>
+                                                                                        <td style="vertical-align: middle;">1</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                        <td style="vertical-align: middle;">
+                                                                                            <a href="images/piezo.png" class="image" data-lightbox="hardware-2" data-title="Piezo Buzzer">
+                                                                                                <img src="images/piezo.png" alt="" data-position="center center" style="height:100px;" />
+                                                                                            </a>
+                                                                                        </td>
+                                                                                        <td style="vertical-align: middle;">Piezo buzzer</td>
+                                                                                        <td style="vertical-align: middle;">1</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                        <td style="vertical-align: middle;">
+                                                                                            <a href="images/pushbutton.png" class="image" data-lightbox="hardware-2" data-title="Push Buttons">
+                                                                                                <img src="images/pushbutton.png" alt="" data-position="center center" style="height:100px;" />
+                                                                                            </a>
+                                                                                        </td>
+                                                                                        <td style="vertical-align: middle;">Push Buttons</td>
+                                                                                        <td style="vertical-align: middle;">3</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                        <td style="vertical-align: middle;">
+                                                                                            <a href="images/10kr.png" class="image" data-lightbox="hardware-2" data-title="10K Resistors">
+                                                                                                <img src="images/10kr.png" alt="" data-position="center center" style="height:100px;" />
+                                                                                            </a>
+                                                                                        </td>
+                                                                                        <td style="vertical-align: middle;">10K Resistors</td>
+                                                                                        <td style="vertical-align: middle;">3</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                        <td style="vertical-align: middle;">
+                                                                                            <a href="images/jumperwires.png" class="image" data-lightbox="hardware-2" data-title="Jumper wires">
+                                                                                                <img src="images/jumperwires.png" alt="" data-position="center center" style="height:100px;" />
+                                                                                            </a>
+                                                                                        </td>
+                                                                                        <td style="vertical-align: middle;">Some jumper wires</td>
+                                                                                        <td style="vertical-align: middle;">14</td>
+                                                                                </tr>
+                                                                        </tbody>
+                                                                        <tfoot>
+                                                                                <tr>
+                                                                                        <td colspan="3"></td>
+                                                                                </tr>
+                                                                        </tfoot>
+                                                                </table>
+                                                        </div>
+                                                </div>
+                                        </section>
+					
+					<section id="advanced" class="wrapper style3 fade-up">
+						
+						<div class="inner">
+                                                                <h1 class="major">Advanced</h1>
+                                                                <h2>Miniaturisation of your project</h2>
+                                                                <p>UNDER CONSTRUCTION</p>
+                                                                
+                                                </div>
+                                        </section>
+					
+					
+					
+					<section id="demo" class="wrapper style2 fade-up">
+						
+						<div class="inner">
+                                                                <h1 class="major">Demo</h1>
+                                                                <h2>Breadboard</h2>
+                                                                <iframe style="width:100%; height:400px;" src="https://www.youtube.com/embed/QnaE2OyqSKw" frameborder="0" allowfullscreen></iframe>
+                                                                <h2>Standalone and battery powered</h2>
+                                                                <iframe style="width:100%; height:400px;" src="https://www.youtube.com/embed/nI4fCdZDMbY" frameborder="0" allowfullscreen></iframe>
+                                                                
+                                                </div>
+                                        </section>
+					
+
+				<!-- Three -->
+					<section id="about" class="wrapper style1 fade-up">
+						<div class="inner">
+							<h1 class="major">About me</h1>
+							<p>My name is Alojz Jakob and I <b>love</b> to make things.</p>
+							<div class="split style1">
+								<section>
+									<h2>Some of my other personal projects</h2>
+									
+                                                                        <a href="https://puzzle-mania.net" target="_blank"><img src="https://trampaznanja.com/_graphics/puzzle-mania.jpg" style="width:100%;"></a>
+                                                                        <br/>
+                                                                        <a href="https://www.scientificmind.net" target="_blank"><img src="https://scientificmind.net/scimindbanner.jpg" style="width:100%;"></a>
+                                                                        <br/>
+									<a href="https://trampaznanja.com" target="_blank"><img style="width:100%;" src="https://aida.jakobdesign.com/wp-content/uploads/2017/01/trampa-baner.jpg"></a>
+                                                                        <br/>
+                                                                        <a href="https://sastavisam.com" target="_blank"><img src="https://trampaznanja.com/_graphics/sastavisam.jpg" style="width:100%;"></a>
+                                                                        									
+								</section>
+								<section>
+                                                                        <h2>Contact</h2>
+									<ul class="contact">
+										<li>
+											<h3>Email</h3>
+											<a href="mailto:alojz.jakob@sentinelactive.com?subject=Contact from Tamaguino GitHub page" target="_blank">alojz.jakob@sentinelactive.com</a>
+										</li>
+										<li>
+											<h3>Website</h3>
+											<a href="https://www.sentinelactive.com" target="_blank">https://www.sentinelactive.com</a>
+										</li>
+										<li>
+											<h3>Social</h3>
+											<ul class="icons">
+												<li><a href="https://www.facebook.com/JakobAlojz" target="_blank" class="fa-facebook"><span class="label">Facebook</span></a></li>
+												<li><a href="https://github.com/alojzjakob" target="_blank" class="fa-github"><span class="label">GitHub</span></a></li>
+												<li><a href="https://www.linkedin.com/in/alojzjakob" target="_blank" class="fa-linkedin"><span class="label">LinkedIn</span></a></li>
+											</ul>
+										</li>
+									</ul>
+								</section>
+							</div>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Alojz Jakob. All rights reserved.</li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+			<script src="lib/lightbox2-master/dist/js/lightbox-plus-jquery.min.js"></script>
+
+	</body>
+</html>

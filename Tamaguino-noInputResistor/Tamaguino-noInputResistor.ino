@@ -420,6 +420,9 @@ void setup() {
   digitalWrite(button1Pin, HIGH);
   digitalWrite(button2Pin, HIGH);
   digitalWrite(button3Pin, HIGH);
+  // or just 
+  // pinMode(button1Pin, INPUT_PULLUP)
+  // etc
   
   pinMode(sound, OUTPUT);
 

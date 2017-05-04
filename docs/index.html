@@ -197,17 +197,25 @@
 							<p>Issue is that in <b>Adafruit_SSD1306.h</b> default setting is to use this library with 128x32 displays, so you need to find your library file and modify it as below:</p>
 							
 							<code>
-							#define SSD1306_128_64<br/>
-                            //#define SSD1306_128_32<br/>
-                            //#define SSD1306_96_16<br/>
-							</code>
+							#define SSD1306_128_64
+							</code><br/>
+							<code>
+                            //#define SSD1306_128_32
+                            </code><br/>
+							<code>
+                            //#define SSD1306_96_16
+							</code></br>
 							<p></p>
 							<p>instead of the default one:</p>
 							<code>
-							//#define SSD1306_128_64<br/>
-                            #define SSD1306_128_32<br/>
-                            //#define SSD1306_96_16<br/>
-							</code>
+							//#define SSD1306_128_64
+							</code><br/>
+							<code>
+                            #define SSD1306_128_32
+                            </code><br/>
+							<code>
+                            //#define SSD1306_96_16
+							</code></br>
 							
 							
 							

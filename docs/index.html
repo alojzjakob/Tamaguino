@@ -192,6 +192,24 @@
 								</section>
 								
 							</div>
+                            <h2>Adafruit_SSD1306.h setings for your 128x64 display</h2>
+							<p>Many of you using OLED for the first time asked me by email about the same issue. Tamaguino works but graphics is broken!</p>
+							<p>Issue is that in <b>Adafruit_SSD1306.h</b> default setting is to use this library with 128x32 displays, so you need to find your library file and modify it as below:</p>
+							
+							<code>
+							#define SSD1306_128_64
+                            //#define SSD1306_128_32
+                            //#define SSD1306_96_16
+							</code>
+							
+							<p>instead of the default one:</p>
+							<code>
+							//#define SSD1306_128_64
+                            #define SSD1306_128_32
+                            //#define SSD1306_96_16
+							</code>
+							
+							
 							
 							
 							

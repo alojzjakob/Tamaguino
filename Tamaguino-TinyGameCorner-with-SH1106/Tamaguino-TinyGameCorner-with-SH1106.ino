@@ -12,7 +12,8 @@
 #include <Adafruit_GFX.h>
 #include <Adafruit_SH1106.h>
 
-#define OLED_RESET 4
+//#define OLED_RESET 4
+#define OLED_RESET 1
 Adafruit_SH1106 display(OLED_RESET);
 
 const int button1Pin = 5;

@@ -16,5 +16,5 @@ const int button3Pin = 19;
 const int soundPin = 23; 
 ```
 
-![Tamaguino on ESP32][images/tamaguino_wifikit32]
+![Tamaguino on ESP32](images/tamaguino_wifikit32.jpg)
 

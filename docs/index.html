@@ -227,6 +227,14 @@
 								
 							</div>
                             <h2>Adafruit_SSD1306.h settings for your 128x64 display</h2>
+                            
+                                                            
+                                                        <p>
+                                                        Recent issue is that Adafruit libraries grown in size, and the Tamaguino code cant fit in the Arduino...<br/>
+							The solution is to downgrade the Audafruit_SSD1306 lib to 1.1.2, and downgrade the Audafruit GFX lib to 1.1.5, <br/>
+							After downgrading, it will upload to Arduino.
+                                                        </p>
+                                                            
 							<p>Many of you using OLED for the first time asked me by email about the same issue. Tamaguino works but graphics is broken!</p>
 							<p>Issue is that in <b>Adafruit_SSD1306.h</b> default setting is to use this library with 128x32 displays, so you need to find your library file and modify it as follows:</p>
 							
@@ -251,9 +259,7 @@
                             //#define SSD1306_96_16
 							</code><br/>
 							
-							Another more recent issue si that Adafruit libraries grown in size, and the Tamaguino code cant fit in the Arduino...<br/>
-							The solution is to downgrade the Audafruit_SSD1306 lib to 1.1.2, and downgrade the Audafruit GFX lib to 1.1.5, <br/>
-							After downgrading, it will upload to Arduino.
+							
 							
 							
 							

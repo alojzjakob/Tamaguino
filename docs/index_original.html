@@ -1,0 +1,703 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Tamaguino - Tamagotchi clone for Arduino</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		
+                <meta property="og:title" content="Tamaguino">
+                <meta property="og:description" content="Tamagotchi clone for Arduino">
+                <meta property="og:image" content="https://alojzjakob.github.io/Tamaguino/images/ogimage.png">
+
+                <meta name="twitter:card" content="summary">
+                <meta name="twitter:title" content="Tamaguino">
+                <meta name="twitter:description" content="Tamagotchi clone for Arduino">
+                <meta name="twitter:image" content="https://alojzjakob.github.io/Tamaguino/images/ogimage.png">
+		
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<link rel="stylesheet" href="lib/lightbox2-master/dist/css/lightbox.min.css">
+		<link rel="icon" href="images/icon.png" />
+	</head>
+	<body>
+	
+	<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=1747769678885793";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+	
+	
+
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							<li><a href="#intro">Welcome</a></li>
+							<li><a href="#overview">Intro</a></li>
+							<li><a href="#source">Source code</a></li>
+							<li><a href="#hardware">Hardware</a></li>
+							<li><a href="#advanced">Advanced</a></li>
+							<li><a href="#ports">Ports</a></li>
+							<li><a href="#demo">Demo</a></li>
+							<li><a href="#social">Discussion area</a></li>
+							<li><a href="#about">About me</a></li>
+							<!--<li><a href="https://www.facebook.com/Tamaguino/" target="_blank">Tamagino on Facebook</a></li>-->
+							
+						</ul>
+					</nav>
+				</div>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+                                
+				<!-- Intro -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+                                                
+						<div class="inner">
+							<h1 class="major">Tamaguino <img src="images/splash.png"/></h1>
+							<p>Tamagotchi clone for Arduino developed by <a href="https://jakobdesign.com" target="_blank">Alojz Jakob</a><br />
+							and released for free under the <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank">GNU General Public License</a>.</p>
+							<ul class="actions">
+								<li>
+                                                                    <a href="#overview" class="button scrolly">Learn more</a>
+                                                                </li>
+                                                        </ul>
+                                                        <ul class="actions">
+                                                                <li>
+                                                                    <a href="https://www.facebook.com/Tamaguino/" class="button scrolly" target="_blank">Visit Tamagino on Facebook</a>
+                                                                </li>
+                                                                <li>like the page and join the community</li>
+                                                        </ul>
+                                                        <ul class="actions">
+                                                                <li>or support my work and </li>
+								<!--<li>
+                                                                    <a href="#source" class="button scrolly">I don't want to read, bring it on!</a>
+                                                                </li>-->
+								<li>
+                                                                    <a href='https://ko-fi.com/A654MLL' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+								</li>
+							</ul>
+							<br/>
+							<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                                                        <!-- Trampa Znanja -->
+                                                        <ins class="adsbygoogle"
+                                                            style="display:block;text-align:left;"
+                                                            data-ad-client="ca-pub-6458654663977296"
+                                                            data-ad-slot="4032418833"
+                                                            data-ad-format="auto"></ins>
+                                                        <script>
+                                                        (adsbygoogle = window.adsbygoogle || []).push({});
+                                                        </script>
+						</div>
+					</section>
+
+				<!-- One -->
+					<section id="overview" class="wrapper style2 spotlights">
+						<section>
+						
+							<a href="images/tamagotchi.jpg" class="image" data-lightbox="overview-1" data-title="Original Tamagotchi"><img src="images/tamagotchi.jpg" alt="" data-position="center center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Why Tamagotchi clone?</h2>
+									<p>When I was a kid and went to primary school, something happened.</p>
+									<p>Invasion of cool egg-shaped digital pets!</p>
+									<p>Everyone had one. Some had original Bandai toys, some had cheap chinese copies (which were better!)</p>
+									<p>After some time I became interested in programming, and since then I was obsessed with building virtual pet of my own.</p>
+									<ul class="actions">
+										<li><a href="https://en.wikipedia.org/wiki/Tamagotchi" target="_blank" class="button">Learn more</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a href="images/petmain.png" class="image" data-lightbox="overview-1" data-title="My project in c as a console application (faculty work)" ><img src="images/petmain.png" alt="" data-position="top center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>AJgotchi - Linux console application</h2>
+									<p>At faculty we had an assignment to create C application that will work in Linux terminal. This was my first attempt to create a PC clone of this popular toy.</p>
+									<p>(Serbian language)</p>
+									<ul class="actions">
+										<li><a href="http://os.etf.rs/POS/projekti/2006/jakob_alojz/" target="_blank" class="button">Source</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a href="images/AJgotchiVB.jpg" class="image" data-lightbox="overview-1" data-title="AJGotchi in VisualBasic 6" ><img src="images/AJgotchiVB.jpg" alt="" data-position="top center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>AJgotchi - Playing around in VB6</h2>
+									<p>My second attempt to create Tamagotchi clone with some GUI. Just for fun :)</p>
+									<ul class="actions">
+										<li><a href="download/AJgotchi.zip" target="_blank" class="button">Download</a></li>
+										<li><a href="https://www.microsoft.com/en-us/download/details.aspx?id=24417" target="_blank" class="button">VBRUN6</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+					</section>
+
+				<!-- Two -->
+					<section id="source" class="wrapper style3 fade-up">
+						<div class="inner">
+							<h1 class="major">Tamaguino source</h1>
+							<p>Source code is freely available on GitHub. You can download zip package or clone the repository.</p>
+							<div class="features">
+								<section>
+									<span class="icon major fa-github"></span>
+									<h3>
+                                                                            <a href="https://github.com/alojzjakob/Tamaguino" target="_blank">Source on GitHub</a>
+									</h3>
+									<p></p>
+								</section>
+								<section>
+									<span class="icon major fa-download"></span>
+									<h3>
+                                                                            <a href="https://github.com/alojzjakob/Tamaguino/archive/master.zip" target="_blank">Download as zip</a>
+									</h3>
+									<p></p>
+								</section>
+								
+							</div>
+							<h2>Dependencies</h2>
+							
+							<div class="features">
+                                                                <section>
+									<span class="icon major fa-github"></span>
+									<h3>
+                                                                            <a href="https://github.com/adafruit/Adafruit-GFX-Library" target="_blank">Adafruit GFX Library</a>
+									</h3>
+									<p></p>
+								</section>
+								<section>
+									<span class="icon major fa-github"></span>
+									<h3>
+                                                                            <a href="https://github.com/adafruit/Adafruit_SSD1306" target="_blank">Adafruit SSD1306 Library</a>
+									</h3>
+									<p></p>
+								</section>
+								
+							</div>
+							
+							<h2>Useful documentation and tools</h2>
+							
+							<div class="features">
+                                                                <section>
+									<span class="icon major fa-book"></span>
+									<h3>
+                                                                            <a href="https://cdn-learn.adafruit.com/downloads/pdf/adafruit-gfx.pdf" target="_blank">Adafruit GFX Library reference guide</a>
+									</h3>
+									<p></p>
+								</section>
+								<section>
+									<span class="icon major fa-link"></span>
+									<h3>
+                                                                            <a href="https://www.arduino.cc/" target="_blank">Arduino official site</a>
+									</h3>
+									<p></p>
+								</section>
+								<section>
+									<span class="icon major fa-code"></span>
+									<h3>
+                                                                            <a href="https://github.com/ehubin/Adafruit-GFX-Library/tree/master/Img2Code" target="_blank">Img2Code</a>
+									</h3>
+									<p></p>
+								</section>
+								<section>
+									<span class="icon major fa-code"></span>
+									<h3>
+                                                                            <a href="http://javl.github.io/image2cpp/" target="_blank">image2cpp</a>
+									</h3>
+									<p></p>
+								</section>
+								
+							</div>
+                            <h2>Adafruit_SSD1306.h settings for your 128x64 display</h2>
+                            
+                                                            
+                                                        <p>
+                                                        Recent issue is that Adafruit libraries grown in size, and the Tamaguino code can't fit in the Arduino...<br/>
+							The solution is to downgrade the Audafruit_SSD1306 lib to 1.1.2, and downgrade the Audafruit GFX lib to 1.1.5, <br/>
+							After downgrading, it will upload to Arduino.<br/>
+							Solution to this is well explined in <a href="https://alojzjakob.github.io/Tamaguino/download/Tamaguino-adafruit.pdf" target="_blank">Guide by Thomas Fendrich</a>.
+                                                        </p>
+                                                            
+							<p>Many of you using OLED for the first time asked me by email about the same issue. Tamaguino works but graphics is broken!</p>
+							<p>Issue is that in <b>Adafruit_SSD1306.h</b> default setting is to use this library with 128x32 displays, so you need to find your library file and modify it as follows:</p>
+							
+							<code>
+							#define SSD1306_128_64
+							</code><br/>
+							<code>
+                            //#define SSD1306_128_32
+                            </code><br/>
+							<code>
+                            //#define SSD1306_96_16
+							</code></br>
+							<p></p>
+							<p>instead of the default one:</p>
+							<code>
+							//#define SSD1306_128_64
+							</code><br/>
+							<code>
+                            #define SSD1306_128_32
+                            </code><br/>
+							<code>
+                            //#define SSD1306_96_16
+							</code><br/>
+							
+							
+							
+							
+							
+						</div>
+					</section>
+					
+					
+					
+					<section id="hardware" class="wrapper style2 fade-up">
+						
+						<div class="inner">
+                                                                <h1 class="major">Hardware</h1>
+                                                                <h2>Breadboard wiring</h2>
+                                                                <p>In this example we will use Arduino UNO.</p>
+                                                                <p><i>Note: on chinese Arduino UNO SCL and SDA lines may be positioned differently, please check pinout of your board.</i></p>
+                                                                <p>On the image below you can see how your components should be wired if you use active HIGH for input and resistors:</p>
+                                                                <a href="images/tamaguino-breadboard.png" class="image" data-lightbox="hardware-1" data-title="Breadboard wiring">
+                                                                    <img src="images/tamaguino-breadboard.png" alt="" data-position="center center" style="width:50%;" />
+                                                                </a>
+                                                                <br/>
+                                                                <p>without resistors, with active LOW:</p>
+                                                                <a href="images/tamaguino-breadboard-no-resistors.png" class="image" data-lightbox="hardware-1" data-title="Breadboard wiring - no resistors">
+                                                                    <img src="images/tamaguino-breadboard-no-resistors.png" alt="" data-position="center center" style="width:50%;" />
+                                                                </a>
+                                                                <br/>
+                                                                <p>Please use appropriate sketch from sources.</p>
+                                                </div>
+                                        </section>
+					<section id="hardware-parts-list" class="wrapper style2 fade-up">
+                                                <div class="inner">
+                                                        <h2>Parts list</h2>
+                                                        <div class="table-wrapper">
+                                                                <table class="alt">
+                                                                        <thead>
+                                                                                <tr>
+                                                                                        <th>Image</th>
+                                                                                        <th>Name</th>
+                                                                                        <th>Quantity</th>
+                                                                                </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                                <tr>
+                                                                                        <td style="vertical-align: middle;">
+                                                                                            <a href="images/arduino-uno.png" class="image" data-lightbox="hardware-2" data-title="Arduino UNO">
+                                                                                                <img src="images/arduino-uno.png" alt="" data-position="center center" style="height:100px;" />
+                                                                                            </a>
+                                                                                        </td>
+                                                                                        <td style="vertical-align: middle;">Arduino UNO</td>
+                                                                                        <td style="vertical-align: middle;">1</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                        <td style="vertical-align: middle;">
+                                                                                            <a href="images/breadboard.png" class="image" data-lightbox="hardware-2" data-title="Breadboard">
+                                                                                                <img src="images/breadboard.png" alt="" data-position="center center" style="height:100px;" />
+                                                                                            </a>
+                                                                                        </td>
+                                                                                        <td style="vertical-align: middle;">Breadboard</td>
+                                                                                        <td style="vertical-align: middle;">1</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                        <td style="vertical-align: middle;">
+                                                                                            <a href="images/ssd1306.png" class="image" data-lightbox="hardware-2" data-title="SSD1306 OLED">
+                                                                                                <img src="images/ssd1306.png" alt="" data-position="center center" style="height:100px;" />
+                                                                                            </a>
+                                                                                        </td>
+                                                                                        <td style="vertical-align: middle;">SSD1306 128x64 OLED display (I<sup>2</sup>C version)</td>
+                                                                                        <td style="vertical-align: middle;">1</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                        <td style="vertical-align: middle;">
+                                                                                            <a href="images/piezo.png" class="image" data-lightbox="hardware-2" data-title="Piezo Buzzer">
+                                                                                                <img src="images/piezo.png" alt="" data-position="center center" style="height:100px;" />
+                                                                                            </a>
+                                                                                        </td>
+                                                                                        <td style="vertical-align: middle;">Piezo buzzer</td>
+                                                                                        <td style="vertical-align: middle;">1</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                        <td style="vertical-align: middle;">
+                                                                                            <a href="images/pushbutton.png" class="image" data-lightbox="hardware-2" data-title="Push Buttons">
+                                                                                                <img src="images/pushbutton.png" alt="" data-position="center center" style="height:100px;" />
+                                                                                            </a>
+                                                                                        </td>
+                                                                                        <td style="vertical-align: middle;">Push Buttons</td>
+                                                                                        <td style="vertical-align: middle;">3</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                        <td style="vertical-align: middle;">
+                                                                                            <a href="images/10kr.png" class="image" data-lightbox="hardware-2" data-title="10K Resistors">
+                                                                                                <img src="images/10kr.png" alt="" data-position="center center" style="height:100px;" />
+                                                                                            </a>
+                                                                                        </td>
+                                                                                        <td style="vertical-align: middle;">10K Resistors</td>
+                                                                                        <td style="vertical-align: middle;">3</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                        <td style="vertical-align: middle;">
+                                                                                            <a href="images/jumperwires.png" class="image" data-lightbox="hardware-2" data-title="Jumper wires">
+                                                                                                <img src="images/jumperwires.png" alt="" data-position="center center" style="height:100px;" />
+                                                                                            </a>
+                                                                                        </td>
+                                                                                        <td style="vertical-align: middle;">Some jumper wires</td>
+                                                                                        <td style="vertical-align: middle;">14</td>
+                                                                                </tr>
+                                                                        </tbody>
+                                                                        <tfoot>
+                                                                                <tr>
+                                                                                        <td colspan="3"></td>
+                                                                                </tr>
+                                                                        </tfoot>
+                                                                </table>
+                                                        </div>
+                                                </div>
+                                        </section>
+					
+					<section id="advanced" class="wrapper style3 fade-up spotlights">
+						
+						<div class="inner">
+                                                                <h1 class="major">Advanced</h1>
+                                                                <h2>Miniaturisation of your project</h2>
+                                                                <p>These are the components that you can use to replace Arduino UNO, breadboard, large piezzo speaker, and make it portable and powered with LiPo battery!</p>
+                                                                <div class="table-wrapper">
+                                                                <table class="alt">
+                                                                        <thead>
+                                                                                <tr>
+                                                                                        <th>Image</th>
+                                                                                        <th>Name</th>
+                                                                                </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                                <tr>
+                                                                                        <td style="vertical-align: middle;">
+                                                                                            <a href="images/arduinopromini.png" class="image" data-lightbox="minification" data-title="Arduino Pro Mini">
+                                                                                                <img src="images/arduinopromini.png" alt="" data-position="center center" style="height:100px;" />
+                                                                                            </a>
+                                                                                        </td>
+                                                                                        <td style="vertical-align: middle;">Arduino Pro Mini, this one like on image is my favourite :)</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                        <td style="vertical-align: middle;">
+                                                                                            <a href="images/4x6pcb.png" class="image" data-lightbox="minification" data-title="4x6 Prototype PCB">
+                                                                                                <img src="images/4x6pcb.png" alt="" data-position="center center" style="height:100px;" />
+                                                                                            </a>
+                                                                                        </td>
+                                                                                        <td style="vertical-align: middle;">4cm x 6cm prototyping PCB</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                        <td style="vertical-align: middle;">
+                                                                                            <a href="images/lipo720.png" class="image" data-lightbox="minification" data-title="LiPo battery 720 mAh">
+                                                                                                <img src="images/lipo720.png" alt="" data-position="center center" style="height:100px;" />
+                                                                                            </a>
+                                                                                        </td>
+                                                                                        <td style="vertical-align: middle;">LiPo rechargeable battery 720 mAh</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                        <td style="vertical-align: middle;">
+                                                                                            <a href="images/lipocharger.png" class="image" data-lightbox="minification" data-title="LiPo charging circuit">
+                                                                                                <img src="images/lipocharger.png" alt="" data-position="center center" style="height:100px;" />
+                                                                                            </a>
+                                                                                        </td>
+                                                                                        <td style="vertical-align: middle;">Micro USB LiPo charging circuit</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                        <td style="vertical-align: middle;">
+                                                                                            <a href="images/12mmpiezo.png" class="image" data-lightbox="minification" data-title="Piezo Buzzer 12mm">
+                                                                                                <img src="images/12mmpiezo.png" alt="" data-position="center center" style="height:100px;" />
+                                                                                            </a>
+                                                                                        </td>
+                                                                                        <td style="vertical-align: middle;">Piezo Buzzer - 12mm</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                        <td style="vertical-align: middle;">
+                                                                                            <a href="images/promini.jpg" class="image" data-lightbox="minification" data-title="Arduino Pro Mini pinout">
+                                                                                                <img src="images/promini.jpg" alt="" data-position="center center" style="height:200px;" />
+                                                                                            </a>
+                                                                                        </td>
+                                                                                        <td style="vertical-align: middle;">Unofficial Arduino Pro Mini pinout</td>
+                                                                                </tr>
+                                                                                
+                                                                        </tbody>
+                                                                        <tfoot>
+                                                                                <tr>
+                                                                                        <td colspan="2">
+                                                                                            * refer to second video in <a href="#demo">Demo</a> section to see components arrangement if you want to use custom <a href="#packaging">Tamaguino case</a>!<br/><br/>
+                                                                                            * More info about assembly can be found here: <a href="https://www.diyelectronics.co.za/wiki/#Arduino/Projects/Tamaguino/Tamaguino/">https://www.diyelectronics.co.za/wiki/#Arduino/Projects/Tamaguino/Tamaguino/</a><br/>
+                                                                                            Only 3 differences between my original project and this are:<br/>
+                                                                                            1. the piezo in original is above the screen, and it is a small flat piezo. <br/>
+                                                                                            2. the LiPo battery, in my project i used small one which can fit below the arduino pro mini in the back, so everything fits inside a case.<br/>
+                                                                                            3. placement of on/off switch, when you get your 3D printed case you will see where the switch should be.
+                                                                                        </td>
+                                                                                </tr>
+                                                                        </tfoot>
+                                                                </table>
+                                                        </div>
+                                                                
+                                                                
+                                                    <h1 class="major" name="packaging">Packaging</h2>
+                                                                
+                                                                
+                                                </div>
+                                                <section>
+                                                        <a href="images/thingiverse.png" class="image" data-lightbox="thingiverse" data-title="Tamaguino case on Thingiverse"><img src="images/thingiverse.png" alt="" data-position="center center" /></a>
+                                                        <div class="content">
+                                                                <div class="inner">
+                                                                        <h2>3D printable case</h2>
+                                                                        <p>If you followed minification steps from above, your Tamaguino should fit inside this case!</p>
+                                                                        <ul class="actions">
+                                                                                <li><a href="http://www.thingiverse.com/thing:2120692" target="_blank" class="button">Goodies!</a></li>
+                                                                        </ul>
+                                                                </div>
+                                                        </div>
+                                                </section>
+                                                <section>
+                                                        <a href="images/thingiverse-nick.png" class="image" data-lightbox="thingiverse" data-title="Tamaguino case from Nick (educ8s.tv) on Thingiverse"><img src="images/thingiverse-nick.png" alt="" data-position="center center" /></a>
+                                                        <div class="content">
+                                                                <div class="inner">
+                                                                        <h2>3D printable case from Nick (educ8s.tv)</h2>
+                                                                        <p>Since I am really not skilled in shooting videos, Nick from educ8s.tv YouTube channel did that and made his own version of Tamaguino!</p>
+                                                                        <ul class="actions">
+                                                                                <li><a href="https://www.thingiverse.com/thing:2374552" target="_blank" class="button">Even more goodies!</a></li>
+                                                                        </ul>
+                                                                </div>
+                                                        </div>
+                                                </section>
+                                        </section>
+					
+					
+					<section id="ports" class="wrapper style1 fade-up spotlights">
+						
+						<div class="inner">
+							<h1 class="major">Tamaguino for Arduboy</h1>
+							<p>Ported and improved by Keyboard_Camper. Source code is freely available on GitHub.</p>
+							<div class="features">
+								<section>
+									<span class="icon major fa-github"></span>
+									<h3>
+                                                                            <a href="https://github.com/KeyboardCamper/Tamaguino-AB" target="_blank">Source on GitHub</a>
+									</h3>
+									<p></p>
+								</section>
+								<section>
+									<span class="icon major fa-link"></span>
+									<h3>
+                                                                            <a href="https://community.arduboy.com/t/tamaguino-ab-tamagotchi-for-arduino/4806" target="_blank">Arduboy community page</a>
+									</h3>
+									<p></p>
+								</section>
+								
+							</div>
+
+							<h1 class="major">Tamaguino for Arduino Mega - Tamaguino-Mega</h1>
+							<p>Ported and improved by SandwichRising. Source code is freely available on GitHub.</p>
+							<div class="features">
+								<section>
+									<span class="icon major fa-github"></span>
+									<h3>
+                                                                            <a href="https://github.com/SandwichRising/Tamaguino-Mega" target="_blank">Source on GitHub</a>
+									</h3>
+									<p></p>
+								</section>
+							</div>
+							
+							<h1 class="major">Virtual Tamaguino - Tamagotchi Arduino Clone Mixed in VBB</h1>
+							<p>Made by <a href="https://www.hackster.io/VBB" target="_blank">James Caska</a> from <a href="http://www.virtualbreadboard.com/" target="_blank">http://www.virtualbreadboard.com/</a>.</p>
+							<div class="features">
+								<section>
+									<span class="icon major fa-link"></span>
+									<h3>
+                                                                            <a href="https://www.hackster.io/VBB/virtual-tamaguino-tamagotchi-arduino-clone-mixed-in-vbb-9bf927" target="_blank">View on Hackster</a>
+									</h3>
+									<p></p>
+								</section>
+							</div>
+						</div>
+						
+                                                
+                                        </section>
+					
+					
+					
+					
+					
+					
+					
+					<section id="demo" class="wrapper style2 fade-up">
+						
+						<div class="inner">
+                                                                <h1 class="major">Demo</h1>
+                                                                <h2>Breadboard</h2>
+                                                                <iframe class="youtubeiframe" src="https://www.youtube.com/embed/QnaE2OyqSKw" frameborder="0" allowfullscreen></iframe>
+                                                                <br/>
+                                                                <br/>
+                                                                <h2>Standalone and battery powered</h2>
+                                                                <iframe class="youtubeiframe" src="https://www.youtube.com/embed/nI4fCdZDMbY" frameborder="0" allowfullscreen></iframe>
+                                                                <br/>
+                                                                <br/>
+                                                                <h2>Arduboy by Keyboard_Camper</h2>
+                                                                <iframe class="youtubeiframe" src="https://www.youtube.com/embed/KLK4Fuo0xwU" frameborder="0" allowfullscreen></iframe>
+                                                                <br/>
+                                                                <br/>
+                                                                <h2>Great video from Nick!</h2>
+                                                                Nick is a host at educ8s.tv YouTube channel which, by keeping it simple and with nice explanations, brings exciting world of tinkering and DIY to the masses.<br/>Anyone can become a maker today!
+                                                                <br/>
+                                                                <br/>
+                                                                <ul class="actions">
+                                                                    <li><a href="https://www.youtube.com/channel/UCxqx59koIGfGRRGeEm5qzjQ" target="_blank" class="button">Visit and subscribe to educ8s.tv YouTube Channel</a></li>
+                                                                </ul>
+                                                                <ul class="actions">
+                                                                    <li><a href="http://educ8s.tv/" target="_blank" class="button">educ8s.tv website</a></li>
+                                                                </ul>
+                                                                <ul class="actions">
+                                                                    <li><a href="http://www.instructables.com/id/Arduino-Tamagotchi-Clone-Digital-Pet/" target="_blank" class="button">Instructables by educ8s.tv</a></li>
+                                                                </ul>
+                                                                
+                                                                <iframe class="youtubeiframe" src="https://www.youtube.com/embed/hVJMpxYdGmo" frameborder="0" allowfullscreen></iframe>
+                                                                <br/>
+                                                                <br/>
+                                                                <h2>Finished!</h2>
+                                                                <p>If you enjoyed creating this little project, you can support my work and <a href='https://ko-fi.com/A654MLL' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a> :)</p>
+                                                                <a href="images/tamaguinoFinished2.jpg" class="image" data-lightbox="minification" data-title="Finished">
+                                                                    <img src="images/tamaguinoFinished2.jpg" alt="" data-position="center center" style="height:300px;" />
+                                                                </a>
+                                                                <a href="images/tamaguinoFinished1.jpg" class="image" data-lightbox="minification" data-title="Finished">
+                                                                    <img src="images/tamaguinoFinished1.jpg" alt="" data-position="center center" style="height:300px;" />
+                                                                </a>
+                                                                
+                                                </div>
+                                        </section>
+                                        
+                                        
+					<section id="social" class="wrapper style3 fade-up">
+						
+						<div class="inner">
+                                                                <h1 class="major">Discussion area</h1>
+                                                                <ul class="actions">
+                                                                    <li><a href="https://www.facebook.com/Tamaguino/" target="_blank" class="button">Official Facebook page</a></li>
+                                                                    <li>with news and other useful info</li>
+                                                                </ul>
+                                                                <ul class="actions">
+                                                                    <li><a href="https://www.facebook.com/groups/387144878368080/" target="_blank" class="button">Facebook group</a></li>
+                                                                    <li>where you can ask questions, show your work etc.</li>
+                                                                </ul>
+                                                                <div class="fb-page" data-href="https://www.facebook.com/Tamaguino/" data-width="500" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Tamaguino/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Tamaguino/">Tamaguino - Tamagotchi pet clone with Arduino</a></blockquote></div>
+                                                </div>
+                                        </section>
+
+				<!-- Three -->
+					<section id="about" class="wrapper style1 fade-up">
+						<div class="inner">
+							<h1 class="major">About me</h1>
+							<p>My name is Alojz Jakob and I <b>love</b> to make things.</p>
+							<div class="split style1">
+								<section>
+									<h2>Some of my other personal projects</h2>
+									
+                                                                        <a href="https://puzzle-mania.net" target="_blank"><img src="https://trampaznanja.com/_graphics/puzzle-mania.jpg" style="width:100%;"></a>
+                                                                        <br/>
+                                                                        <a href="https://www.scientificmind.net" target="_blank"><img src="https://scientificmind.net/scimindbanner.jpg" style="width:100%;"></a>
+                                                                        <br/>
+                                                                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                                                                        <!-- Trampa Znanja -->
+                                                                        <ins class="adsbygoogle"
+                                                                            style="display:block;text-align:left;"
+                                                                            data-ad-client="ca-pub-6458654663977296"
+                                                                            data-ad-slot="4032418833"
+                                                                            data-ad-format="auto"></ins>
+                                                                        <script>
+                                                                        (adsbygoogle = window.adsbygoogle || []).push({});
+                                                                        </script>
+                                                                        <br/>
+									<a href="https://trampaznanja.com" target="_blank"><img style="width:100%;" src="https://aida.jakobdesign.com/wp-content/uploads/2017/01/trampa-baner.jpg"></a>
+                                                                        <br/>
+                                                                        
+                                                                        <a href="https://sastavisam.com" target="_blank"><img src="https://trampaznanja.com/_graphics/sastavisam.jpg" style="width:100%;"></a>
+                                                                        <br/>
+                                                                        
+                                                                        
+								</section>
+								<section>
+                                                                        <h2>Contact</h2>
+                                                                        <img src="images/alojz.jpg" style="width:100%;" /><br/>
+									<ul class="contact">
+										<li>
+											<h3>Email</h3>
+											<a href="mailto:alojzjakob@gmail.com?subject=Contact from Tamaguino GitHub page" target="_blank">alojzjakob@gmail.com</a>
+										</li>
+										<li>
+											<h3>Website</h3>
+											<a href="https://www.sentinelactive.com" target="_blank">https://www.sentinelactive.com</a>
+										</li>
+										<li>
+											<h3>Social</h3>
+											<ul class="icons">
+												<li><a href="https://www.facebook.com/JakobAlojz" target="_blank" class="fa-facebook"><span class="label">Facebook</span></a></li>
+												<li><a href="https://github.com/alojzjakob" target="_blank" class="fa-github"><span class="label">GitHub</span></a></li>
+												<li><a href="https://www.linkedin.com/in/alojzjakob" target="_blank" class="fa-linkedin"><span class="label">LinkedIn</span></a></li>
+											</ul>
+										</li>
+									</ul>
+								</section>
+							</div>
+						</div>
+						
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Alojz Jakob. All rights reserved.</li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+			<script src="lib/lightbox2-master/dist/js/lightbox-plus-jquery.min.js"></script>
+			
+			<script>
+                            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                            ga('create', 'UA-92222594-1', 'auto');
+                            ga('send', 'pageview');
+
+                            </script>
+			
+
+	</body>
+</html>

@@ -1,703 +1,162 @@
-<!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Tamaguino - Tamagotchi clone for Arduino</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		
-		
-                <meta property="og:title" content="Tamaguino">
-                <meta property="og:description" content="Tamagotchi clone for Arduino">
-                <meta property="og:image" content="https://alojzjakob.github.io/Tamaguino/images/ogimage.png">
 
-                <meta name="twitter:card" content="summary">
-                <meta name="twitter:title" content="Tamaguino">
-                <meta name="twitter:description" content="Tamagotchi clone for Arduino">
-                <meta name="twitter:image" content="https://alojzjakob.github.io/Tamaguino/images/ogimage.png">
-		
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<link rel="stylesheet" href="lib/lightbox2-master/dist/css/lightbox.min.css">
-		<link rel="icon" href="images/icon.png" />
-	</head>
-	<body>
-	
-	<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=1747769678885793";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-	
-	
+<!doctype html>
+<title>Tamaguino workshop door Q42</title>
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<meta name="twitter:title" content="Tamaguino workshop door Q42">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<script>
+  var host = "q42.github.io";
+  if (window.location.host == host && window.location.protocol != "https:") {
+    window.location.protocol = "https:";
+  }
+</script>
+<style>
+  * {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 1.5;
+  }
 
-		<!-- Sidebar -->
-			<section id="sidebar">
-				<div class="inner">
-					<nav>
-						<ul>
-							<li><a href="#intro">Welcome</a></li>
-							<li><a href="#overview">Intro</a></li>
-							<li><a href="#source">Source code</a></li>
-							<li><a href="#hardware">Hardware</a></li>
-							<li><a href="#advanced">Advanced</a></li>
-							<li><a href="#ports">Ports</a></li>
-							<li><a href="#demo">Demo</a></li>
-							<li><a href="#social">Discussion area</a></li>
-							<li><a href="#about">About me</a></li>
-							<!--<li><a href="https://www.facebook.com/Tamaguino/" target="_blank">Tamagino on Facebook</a></li>-->
-							
-						</ul>
-					</nav>
-				</div>
-			</section>
+  html {
+    background-color: #F1F1F1;
+    color: #777;
+  }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
-                                
-				<!-- Intro -->
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
-                                                
-						<div class="inner">
-							<h1 class="major">Tamaguino <img src="images/splash.png"/></h1>
-							<p>Tamagotchi clone for Arduino developed by <a href="https://jakobdesign.com" target="_blank">Alojz Jakob</a><br />
-							and released for free under the <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank">GNU General Public License</a>.</p>
-							<ul class="actions">
-								<li>
-                                                                    <a href="#overview" class="button scrolly">Learn more</a>
-                                                                </li>
-                                                        </ul>
-                                                        <ul class="actions">
-                                                                <li>
-                                                                    <a href="https://www.facebook.com/Tamaguino/" class="button scrolly" target="_blank">Visit Tamagino on Facebook</a>
-                                                                </li>
-                                                                <li>like the page and join the community</li>
-                                                        </ul>
-                                                        <ul class="actions">
-                                                                <li>or support my work and </li>
-								<!--<li>
-                                                                    <a href="#source" class="button scrolly">I don't want to read, bring it on!</a>
-                                                                </li>-->
-								<li>
-                                                                    <a href='https://ko-fi.com/A654MLL' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
-								</li>
-							</ul>
-							<br/>
-							<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                                                        <!-- Trampa Znanja -->
-                                                        <ins class="adsbygoogle"
-                                                            style="display:block;text-align:left;"
-                                                            data-ad-client="ca-pub-6458654663977296"
-                                                            data-ad-slot="4032418833"
-                                                            data-ad-format="auto"></ins>
-                                                        <script>
-                                                        (adsbygoogle = window.adsbygoogle || []).push({});
-                                                        </script>
-						</div>
-					</section>
+  body {
+    margin: 0;
+  }
 
-				<!-- One -->
-					<section id="overview" class="wrapper style2 spotlights">
-						<section>
-						
-							<a href="images/tamagotchi.jpg" class="image" data-lightbox="overview-1" data-title="Original Tamagotchi"><img src="images/tamagotchi.jpg" alt="" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Why Tamagotchi clone?</h2>
-									<p>When I was a kid and went to primary school, something happened.</p>
-									<p>Invasion of cool egg-shaped digital pets!</p>
-									<p>Everyone had one. Some had original Bandai toys, some had cheap chinese copies (which were better!)</p>
-									<p>After some time I became interested in programming, and since then I was obsessed with building virtual pet of my own.</p>
-									<ul class="actions">
-										<li><a href="https://en.wikipedia.org/wiki/Tamagotchi" target="_blank" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="images/petmain.png" class="image" data-lightbox="overview-1" data-title="My project in c as a console application (faculty work)" ><img src="images/petmain.png" alt="" data-position="top center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>AJgotchi - Linux console application</h2>
-									<p>At faculty we had an assignment to create C application that will work in Linux terminal. This was my first attempt to create a PC clone of this popular toy.</p>
-									<p>(Serbian language)</p>
-									<ul class="actions">
-										<li><a href="http://os.etf.rs/POS/projekti/2006/jakob_alojz/" target="_blank" class="button">Source</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="images/AJgotchiVB.jpg" class="image" data-lightbox="overview-1" data-title="AJGotchi in VisualBasic 6" ><img src="images/AJgotchiVB.jpg" alt="" data-position="top center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>AJgotchi - Playing around in VB6</h2>
-									<p>My second attempt to create Tamagotchi clone with some GUI. Just for fun :)</p>
-									<ul class="actions">
-										<li><a href="download/AJgotchi.zip" target="_blank" class="button">Download</a></li>
-										<li><a href="https://www.microsoft.com/en-us/download/details.aspx?id=24417" target="_blank" class="button">VBRUN6</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-					</section>
+  .main {
+    background: white;
+    color: #444;
+    border-top: 1px solid #F1F1F1;
+    border-bottom: 1px solid #F1F1F1;
+  }
 
-				<!-- Two -->
-					<section id="source" class="wrapper style3 fade-up">
-						<div class="inner">
-							<h1 class="major">Tamaguino source</h1>
-							<p>Source code is freely available on GitHub. You can download zip package or clone the repository.</p>
-							<div class="features">
-								<section>
-									<span class="icon major fa-github"></span>
-									<h3>
-                                                                            <a href="https://github.com/alojzjakob/Tamaguino" target="_blank">Source on GitHub</a>
-									</h3>
-									<p></p>
-								</section>
-								<section>
-									<span class="icon major fa-download"></span>
-									<h3>
-                                                                            <a href="https://github.com/alojzjakob/Tamaguino/archive/master.zip" target="_blank">Download as zip</a>
-									</h3>
-									<p></p>
-								</section>
-								
-							</div>
-							<h2>Dependencies</h2>
-							
-							<div class="features">
-                                                                <section>
-									<span class="icon major fa-github"></span>
-									<h3>
-                                                                            <a href="https://github.com/adafruit/Adafruit-GFX-Library" target="_blank">Adafruit GFX Library</a>
-									</h3>
-									<p></p>
-								</section>
-								<section>
-									<span class="icon major fa-github"></span>
-									<h3>
-                                                                            <a href="https://github.com/adafruit/Adafruit_SSD1306" target="_blank">Adafruit SSD1306 Library</a>
-									</h3>
-									<p></p>
-								</section>
-								
-							</div>
-							
-							<h2>Useful documentation and tools</h2>
-							
-							<div class="features">
-                                                                <section>
-									<span class="icon major fa-book"></span>
-									<h3>
-                                                                            <a href="https://cdn-learn.adafruit.com/downloads/pdf/adafruit-gfx.pdf" target="_blank">Adafruit GFX Library reference guide</a>
-									</h3>
-									<p></p>
-								</section>
-								<section>
-									<span class="icon major fa-link"></span>
-									<h3>
-                                                                            <a href="https://www.arduino.cc/" target="_blank">Arduino official site</a>
-									</h3>
-									<p></p>
-								</section>
-								<section>
-									<span class="icon major fa-code"></span>
-									<h3>
-                                                                            <a href="https://github.com/ehubin/Adafruit-GFX-Library/tree/master/Img2Code" target="_blank">Img2Code</a>
-									</h3>
-									<p></p>
-								</section>
-								<section>
-									<span class="icon major fa-code"></span>
-									<h3>
-                                                                            <a href="http://javl.github.io/image2cpp/" target="_blank">image2cpp</a>
-									</h3>
-									<p></p>
-								</section>
-								
-							</div>
-                            <h2>Adafruit_SSD1306.h settings for your 128x64 display</h2>
-                            
-                                                            
-                                                        <p>
-                                                        Recent issue is that Adafruit libraries grown in size, and the Tamaguino code can't fit in the Arduino...<br/>
-							The solution is to downgrade the Audafruit_SSD1306 lib to 1.1.2, and downgrade the Audafruit GFX lib to 1.1.5, <br/>
-							After downgrading, it will upload to Arduino.<br/>
-							Solution to this is well explined in <a href="https://alojzjakob.github.io/Tamaguino/download/Tamaguino-adafruit.pdf" target="_blank">Guide by Thomas Fendrich</a>.
-                                                        </p>
-                                                            
-							<p>Many of you using OLED for the first time asked me by email about the same issue. Tamaguino works but graphics is broken!</p>
-							<p>Issue is that in <b>Adafruit_SSD1306.h</b> default setting is to use this library with 128x32 displays, so you need to find your library file and modify it as follows:</p>
-							
-							<code>
-							#define SSD1306_128_64
-							</code><br/>
-							<code>
-                            //#define SSD1306_128_32
-                            </code><br/>
-							<code>
-                            //#define SSD1306_96_16
-							</code></br>
-							<p></p>
-							<p>instead of the default one:</p>
-							<code>
-							//#define SSD1306_128_64
-							</code><br/>
-							<code>
-                            #define SSD1306_128_32
-                            </code><br/>
-							<code>
-                            //#define SSD1306_96_16
-							</code><br/>
-							
-							
-							
-							
-							
-						</div>
-					</section>
-					
-					
-					
-					<section id="hardware" class="wrapper style2 fade-up">
-						
-						<div class="inner">
-                                                                <h1 class="major">Hardware</h1>
-                                                                <h2>Breadboard wiring</h2>
-                                                                <p>In this example we will use Arduino UNO.</p>
-                                                                <p><i>Note: on chinese Arduino UNO SCL and SDA lines may be positioned differently, please check pinout of your board.</i></p>
-                                                                <p>On the image below you can see how your components should be wired if you use active HIGH for input and resistors:</p>
-                                                                <a href="images/tamaguino-breadboard.png" class="image" data-lightbox="hardware-1" data-title="Breadboard wiring">
-                                                                    <img src="images/tamaguino-breadboard.png" alt="" data-position="center center" style="width:50%;" />
-                                                                </a>
-                                                                <br/>
-                                                                <p>without resistors, with active LOW:</p>
-                                                                <a href="images/tamaguino-breadboard-no-resistors.png" class="image" data-lightbox="hardware-1" data-title="Breadboard wiring - no resistors">
-                                                                    <img src="images/tamaguino-breadboard-no-resistors.png" alt="" data-position="center center" style="width:50%;" />
-                                                                </a>
-                                                                <br/>
-                                                                <p>Please use appropriate sketch from sources.</p>
-                                                </div>
-                                        </section>
-					<section id="hardware-parts-list" class="wrapper style2 fade-up">
-                                                <div class="inner">
-                                                        <h2>Parts list</h2>
-                                                        <div class="table-wrapper">
-                                                                <table class="alt">
-                                                                        <thead>
-                                                                                <tr>
-                                                                                        <th>Image</th>
-                                                                                        <th>Name</th>
-                                                                                        <th>Quantity</th>
-                                                                                </tr>
-                                                                        </thead>
-                                                                        <tbody>
-                                                                                <tr>
-                                                                                        <td style="vertical-align: middle;">
-                                                                                            <a href="images/arduino-uno.png" class="image" data-lightbox="hardware-2" data-title="Arduino UNO">
-                                                                                                <img src="images/arduino-uno.png" alt="" data-position="center center" style="height:100px;" />
-                                                                                            </a>
-                                                                                        </td>
-                                                                                        <td style="vertical-align: middle;">Arduino UNO</td>
-                                                                                        <td style="vertical-align: middle;">1</td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                        <td style="vertical-align: middle;">
-                                                                                            <a href="images/breadboard.png" class="image" data-lightbox="hardware-2" data-title="Breadboard">
-                                                                                                <img src="images/breadboard.png" alt="" data-position="center center" style="height:100px;" />
-                                                                                            </a>
-                                                                                        </td>
-                                                                                        <td style="vertical-align: middle;">Breadboard</td>
-                                                                                        <td style="vertical-align: middle;">1</td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                        <td style="vertical-align: middle;">
-                                                                                            <a href="images/ssd1306.png" class="image" data-lightbox="hardware-2" data-title="SSD1306 OLED">
-                                                                                                <img src="images/ssd1306.png" alt="" data-position="center center" style="height:100px;" />
-                                                                                            </a>
-                                                                                        </td>
-                                                                                        <td style="vertical-align: middle;">SSD1306 128x64 OLED display (I<sup>2</sup>C version)</td>
-                                                                                        <td style="vertical-align: middle;">1</td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                        <td style="vertical-align: middle;">
-                                                                                            <a href="images/piezo.png" class="image" data-lightbox="hardware-2" data-title="Piezo Buzzer">
-                                                                                                <img src="images/piezo.png" alt="" data-position="center center" style="height:100px;" />
-                                                                                            </a>
-                                                                                        </td>
-                                                                                        <td style="vertical-align: middle;">Piezo buzzer</td>
-                                                                                        <td style="vertical-align: middle;">1</td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                        <td style="vertical-align: middle;">
-                                                                                            <a href="images/pushbutton.png" class="image" data-lightbox="hardware-2" data-title="Push Buttons">
-                                                                                                <img src="images/pushbutton.png" alt="" data-position="center center" style="height:100px;" />
-                                                                                            </a>
-                                                                                        </td>
-                                                                                        <td style="vertical-align: middle;">Push Buttons</td>
-                                                                                        <td style="vertical-align: middle;">3</td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                        <td style="vertical-align: middle;">
-                                                                                            <a href="images/10kr.png" class="image" data-lightbox="hardware-2" data-title="10K Resistors">
-                                                                                                <img src="images/10kr.png" alt="" data-position="center center" style="height:100px;" />
-                                                                                            </a>
-                                                                                        </td>
-                                                                                        <td style="vertical-align: middle;">10K Resistors</td>
-                                                                                        <td style="vertical-align: middle;">3</td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                        <td style="vertical-align: middle;">
-                                                                                            <a href="images/jumperwires.png" class="image" data-lightbox="hardware-2" data-title="Jumper wires">
-                                                                                                <img src="images/jumperwires.png" alt="" data-position="center center" style="height:100px;" />
-                                                                                            </a>
-                                                                                        </td>
-                                                                                        <td style="vertical-align: middle;">Some jumper wires</td>
-                                                                                        <td style="vertical-align: middle;">14</td>
-                                                                                </tr>
-                                                                        </tbody>
-                                                                        <tfoot>
-                                                                                <tr>
-                                                                                        <td colspan="3"></td>
-                                                                                </tr>
-                                                                        </tfoot>
-                                                                </table>
-                                                        </div>
-                                                </div>
-                                        </section>
-					
-					<section id="advanced" class="wrapper style3 fade-up spotlights">
-						
-						<div class="inner">
-                                                                <h1 class="major">Advanced</h1>
-                                                                <h2>Miniaturisation of your project</h2>
-                                                                <p>These are the components that you can use to replace Arduino UNO, breadboard, large piezzo speaker, and make it portable and powered with LiPo battery!</p>
-                                                                <div class="table-wrapper">
-                                                                <table class="alt">
-                                                                        <thead>
-                                                                                <tr>
-                                                                                        <th>Image</th>
-                                                                                        <th>Name</th>
-                                                                                </tr>
-                                                                        </thead>
-                                                                        <tbody>
-                                                                                <tr>
-                                                                                        <td style="vertical-align: middle;">
-                                                                                            <a href="images/arduinopromini.png" class="image" data-lightbox="minification" data-title="Arduino Pro Mini">
-                                                                                                <img src="images/arduinopromini.png" alt="" data-position="center center" style="height:100px;" />
-                                                                                            </a>
-                                                                                        </td>
-                                                                                        <td style="vertical-align: middle;">Arduino Pro Mini, this one like on image is my favourite :)</td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                        <td style="vertical-align: middle;">
-                                                                                            <a href="images/4x6pcb.png" class="image" data-lightbox="minification" data-title="4x6 Prototype PCB">
-                                                                                                <img src="images/4x6pcb.png" alt="" data-position="center center" style="height:100px;" />
-                                                                                            </a>
-                                                                                        </td>
-                                                                                        <td style="vertical-align: middle;">4cm x 6cm prototyping PCB</td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                        <td style="vertical-align: middle;">
-                                                                                            <a href="images/lipo720.png" class="image" data-lightbox="minification" data-title="LiPo battery 720 mAh">
-                                                                                                <img src="images/lipo720.png" alt="" data-position="center center" style="height:100px;" />
-                                                                                            </a>
-                                                                                        </td>
-                                                                                        <td style="vertical-align: middle;">LiPo rechargeable battery 720 mAh</td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                        <td style="vertical-align: middle;">
-                                                                                            <a href="images/lipocharger.png" class="image" data-lightbox="minification" data-title="LiPo charging circuit">
-                                                                                                <img src="images/lipocharger.png" alt="" data-position="center center" style="height:100px;" />
-                                                                                            </a>
-                                                                                        </td>
-                                                                                        <td style="vertical-align: middle;">Micro USB LiPo charging circuit</td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                        <td style="vertical-align: middle;">
-                                                                                            <a href="images/12mmpiezo.png" class="image" data-lightbox="minification" data-title="Piezo Buzzer 12mm">
-                                                                                                <img src="images/12mmpiezo.png" alt="" data-position="center center" style="height:100px;" />
-                                                                                            </a>
-                                                                                        </td>
-                                                                                        <td style="vertical-align: middle;">Piezo Buzzer - 12mm</td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                        <td style="vertical-align: middle;">
-                                                                                            <a href="images/promini.jpg" class="image" data-lightbox="minification" data-title="Arduino Pro Mini pinout">
-                                                                                                <img src="images/promini.jpg" alt="" data-position="center center" style="height:200px;" />
-                                                                                            </a>
-                                                                                        </td>
-                                                                                        <td style="vertical-align: middle;">Unofficial Arduino Pro Mini pinout</td>
-                                                                                </tr>
-                                                                                
-                                                                        </tbody>
-                                                                        <tfoot>
-                                                                                <tr>
-                                                                                        <td colspan="2">
-                                                                                            * refer to second video in <a href="#demo">Demo</a> section to see components arrangement if you want to use custom <a href="#packaging">Tamaguino case</a>!<br/><br/>
-                                                                                            * More info about assembly can be found here: <a href="https://www.diyelectronics.co.za/wiki/#Arduino/Projects/Tamaguino/Tamaguino/">https://www.diyelectronics.co.za/wiki/#Arduino/Projects/Tamaguino/Tamaguino/</a><br/>
-                                                                                            Only 3 differences between my original project and this are:<br/>
-                                                                                            1. the piezo in original is above the screen, and it is a small flat piezo. <br/>
-                                                                                            2. the LiPo battery, in my project i used small one which can fit below the arduino pro mini in the back, so everything fits inside a case.<br/>
-                                                                                            3. placement of on/off switch, when you get your 3D printed case you will see where the switch should be.
-                                                                                        </td>
-                                                                                </tr>
-                                                                        </tfoot>
-                                                                </table>
-                                                        </div>
-                                                                
-                                                                
-                                                    <h1 class="major" name="packaging">Packaging</h2>
-                                                                
-                                                                
-                                                </div>
-                                                <section>
-                                                        <a href="images/thingiverse.png" class="image" data-lightbox="thingiverse" data-title="Tamaguino case on Thingiverse"><img src="images/thingiverse.png" alt="" data-position="center center" /></a>
-                                                        <div class="content">
-                                                                <div class="inner">
-                                                                        <h2>3D printable case</h2>
-                                                                        <p>If you followed minification steps from above, your Tamaguino should fit inside this case!</p>
-                                                                        <ul class="actions">
-                                                                                <li><a href="http://www.thingiverse.com/thing:2120692" target="_blank" class="button">Goodies!</a></li>
-                                                                        </ul>
-                                                                </div>
-                                                        </div>
-                                                </section>
-                                                <section>
-                                                        <a href="images/thingiverse-nick.png" class="image" data-lightbox="thingiverse" data-title="Tamaguino case from Nick (educ8s.tv) on Thingiverse"><img src="images/thingiverse-nick.png" alt="" data-position="center center" /></a>
-                                                        <div class="content">
-                                                                <div class="inner">
-                                                                        <h2>3D printable case from Nick (educ8s.tv)</h2>
-                                                                        <p>Since I am really not skilled in shooting videos, Nick from educ8s.tv YouTube channel did that and made his own version of Tamaguino!</p>
-                                                                        <ul class="actions">
-                                                                                <li><a href="https://www.thingiverse.com/thing:2374552" target="_blank" class="button">Even more goodies!</a></li>
-                                                                        </ul>
-                                                                </div>
-                                                        </div>
-                                                </section>
-                                        </section>
-					
-					
-					<section id="ports" class="wrapper style1 fade-up spotlights">
-						
-						<div class="inner">
-							<h1 class="major">Tamaguino for Arduboy</h1>
-							<p>Ported and improved by Keyboard_Camper. Source code is freely available on GitHub.</p>
-							<div class="features">
-								<section>
-									<span class="icon major fa-github"></span>
-									<h3>
-                                                                            <a href="https://github.com/KeyboardCamper/Tamaguino-AB" target="_blank">Source on GitHub</a>
-									</h3>
-									<p></p>
-								</section>
-								<section>
-									<span class="icon major fa-link"></span>
-									<h3>
-                                                                            <a href="https://community.arduboy.com/t/tamaguino-ab-tamagotchi-for-arduino/4806" target="_blank">Arduboy community page</a>
-									</h3>
-									<p></p>
-								</section>
-								
-							</div>
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 10px;
+  }
 
-							<h1 class="major">Tamaguino for Arduino Mega - Tamaguino-Mega</h1>
-							<p>Ported and improved by SandwichRising. Source code is freely available on GitHub.</p>
-							<div class="features">
-								<section>
-									<span class="icon major fa-github"></span>
-									<h3>
-                                                                            <a href="https://github.com/SandwichRising/Tamaguino-Mega" target="_blank">Source on GitHub</a>
-									</h3>
-									<p></p>
-								</section>
-							</div>
-							
-							<h1 class="major">Virtual Tamaguino - Tamagotchi Arduino Clone Mixed in VBB</h1>
-							<p>Made by <a href="https://www.hackster.io/VBB" target="_blank">James Caska</a> from <a href="http://www.virtualbreadboard.com/" target="_blank">http://www.virtualbreadboard.com/</a>.</p>
-							<div class="features">
-								<section>
-									<span class="icon major fa-link"></span>
-									<h3>
-                                                                            <a href="https://www.hackster.io/VBB/virtual-tamaguino-tamagotchi-arduino-clone-mixed-in-vbb-9bf927" target="_blank">View on Hackster</a>
-									</h3>
-									<p></p>
-								</section>
-							</div>
-						</div>
-						
-                                                
-                                        </section>
-					
-					
-					
-					
-					
-					
-					
-					<section id="demo" class="wrapper style2 fade-up">
-						
-						<div class="inner">
-                                                                <h1 class="major">Demo</h1>
-                                                                <h2>Breadboard</h2>
-                                                                <iframe class="youtubeiframe" src="https://www.youtube.com/embed/QnaE2OyqSKw" frameborder="0" allowfullscreen></iframe>
-                                                                <br/>
-                                                                <br/>
-                                                                <h2>Standalone and battery powered</h2>
-                                                                <iframe class="youtubeiframe" src="https://www.youtube.com/embed/nI4fCdZDMbY" frameborder="0" allowfullscreen></iframe>
-                                                                <br/>
-                                                                <br/>
-                                                                <h2>Arduboy by Keyboard_Camper</h2>
-                                                                <iframe class="youtubeiframe" src="https://www.youtube.com/embed/KLK4Fuo0xwU" frameborder="0" allowfullscreen></iframe>
-                                                                <br/>
-                                                                <br/>
-                                                                <h2>Great video from Nick!</h2>
-                                                                Nick is a host at educ8s.tv YouTube channel which, by keeping it simple and with nice explanations, brings exciting world of tinkering and DIY to the masses.<br/>Anyone can become a maker today!
-                                                                <br/>
-                                                                <br/>
-                                                                <ul class="actions">
-                                                                    <li><a href="https://www.youtube.com/channel/UCxqx59koIGfGRRGeEm5qzjQ" target="_blank" class="button">Visit and subscribe to educ8s.tv YouTube Channel</a></li>
-                                                                </ul>
-                                                                <ul class="actions">
-                                                                    <li><a href="http://educ8s.tv/" target="_blank" class="button">educ8s.tv website</a></li>
-                                                                </ul>
-                                                                <ul class="actions">
-                                                                    <li><a href="http://www.instructables.com/id/Arduino-Tamagotchi-Clone-Digital-Pet/" target="_blank" class="button">Instructables by educ8s.tv</a></li>
-                                                                </ul>
-                                                                
-                                                                <iframe class="youtubeiframe" src="https://www.youtube.com/embed/hVJMpxYdGmo" frameborder="0" allowfullscreen></iframe>
-                                                                <br/>
-                                                                <br/>
-                                                                <h2>Finished!</h2>
-                                                                <p>If you enjoyed creating this little project, you can support my work and <a href='https://ko-fi.com/A654MLL' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a> :)</p>
-                                                                <a href="images/tamaguinoFinished2.jpg" class="image" data-lightbox="minification" data-title="Finished">
-                                                                    <img src="images/tamaguinoFinished2.jpg" alt="" data-position="center center" style="height:300px;" />
-                                                                </a>
-                                                                <a href="images/tamaguinoFinished1.jpg" class="image" data-lightbox="minification" data-title="Finished">
-                                                                    <img src="images/tamaguinoFinished1.jpg" alt="" data-position="center center" style="height:300px;" />
-                                                                </a>
-                                                                
-                                                </div>
-                                        </section>
-                                        
-                                        
-					<section id="social" class="wrapper style3 fade-up">
-						
-						<div class="inner">
-                                                                <h1 class="major">Discussion area</h1>
-                                                                <ul class="actions">
-                                                                    <li><a href="https://www.facebook.com/Tamaguino/" target="_blank" class="button">Official Facebook page</a></li>
-                                                                    <li>with news and other useful info</li>
-                                                                </ul>
-                                                                <ul class="actions">
-                                                                    <li><a href="https://www.facebook.com/groups/387144878368080/" target="_blank" class="button">Facebook group</a></li>
-                                                                    <li>where you can ask questions, show your work etc.</li>
-                                                                </ul>
-                                                                <div class="fb-page" data-href="https://www.facebook.com/Tamaguino/" data-width="500" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Tamaguino/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Tamaguino/">Tamaguino - Tamagotchi pet clone with Arduino</a></blockquote></div>
-                                                </div>
-                                        </section>
+  header {
+    height: 100px;
+  }
 
-				<!-- Three -->
-					<section id="about" class="wrapper style1 fade-up">
-						<div class="inner">
-							<h1 class="major">About me</h1>
-							<p>My name is Alojz Jakob and I <b>love</b> to make things.</p>
-							<div class="split style1">
-								<section>
-									<h2>Some of my other personal projects</h2>
-									
-                                                                        <a href="https://puzzle-mania.net" target="_blank"><img src="https://trampaznanja.com/_graphics/puzzle-mania.jpg" style="width:100%;"></a>
-                                                                        <br/>
-                                                                        <a href="https://www.scientificmind.net" target="_blank"><img src="https://scientificmind.net/scimindbanner.jpg" style="width:100%;"></a>
-                                                                        <br/>
-                                                                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                                                                        <!-- Trampa Znanja -->
-                                                                        <ins class="adsbygoogle"
-                                                                            style="display:block;text-align:left;"
-                                                                            data-ad-client="ca-pub-6458654663977296"
-                                                                            data-ad-slot="4032418833"
-                                                                            data-ad-format="auto"></ins>
-                                                                        <script>
-                                                                        (adsbygoogle = window.adsbygoogle || []).push({});
-                                                                        </script>
-                                                                        <br/>
-									<a href="https://trampaznanja.com" target="_blank"><img style="width:100%;" src="https://aida.jakobdesign.com/wp-content/uploads/2017/01/trampa-baner.jpg"></a>
-                                                                        <br/>
-                                                                        
-                                                                        <a href="https://sastavisam.com" target="_blank"><img src="https://trampaznanja.com/_graphics/sastavisam.jpg" style="width:100%;"></a>
-                                                                        <br/>
-                                                                        
-                                                                        
-								</section>
-								<section>
-                                                                        <h2>Contact</h2>
-                                                                        <img src="images/alojz.jpg" style="width:100%;" /><br/>
-									<ul class="contact">
-										<li>
-											<h3>Email</h3>
-											<a href="mailto:alojzjakob@gmail.com?subject=Contact from Tamaguino GitHub page" target="_blank">alojzjakob@gmail.com</a>
-										</li>
-										<li>
-											<h3>Website</h3>
-											<a href="https://www.sentinelactive.com" target="_blank">https://www.sentinelactive.com</a>
-										</li>
-										<li>
-											<h3>Social</h3>
-											<ul class="icons">
-												<li><a href="https://www.facebook.com/JakobAlojz" target="_blank" class="fa-facebook"><span class="label">Facebook</span></a></li>
-												<li><a href="https://github.com/alojzjakob" target="_blank" class="fa-github"><span class="label">GitHub</span></a></li>
-												<li><a href="https://www.linkedin.com/in/alojzjakob" target="_blank" class="fa-linkedin"><span class="label">LinkedIn</span></a></li>
-											</ul>
-										</li>
-									</ul>
-								</section>
-							</div>
-						</div>
-						
-					</section>
+  header img {
+    float: left;
+    margin-right: 10px;
+  }
 
-			</div>
+  header h1 {
+    font-weight: 200;
+    float: left;
+    margin-top: 10px;
+  }
 
-		<!-- Footer -->
-			<footer id="footer" class="wrapper style1-alt">
-				<div class="inner">
-					<ul class="menu">
-						<li>&copy; Alojz Jakob. All rights reserved.</li>
-					</ul>
-				</div>
-			</footer>
+  p.description {
+    font-size: 18px;
+  }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
-			<script src="lib/lightbox2-master/dist/js/lightbox-plus-jquery.min.js"></script>
-			
-			<script>
-                            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  h2 {
+    margin-top: 20px;
+  }
 
-                            ga('create', 'UA-92222594-1', 'auto');
-                            ga('send', 'pageview');
+  .lib-container {
+    display: flex;
+    flex-flow: row wrap;
+  }
 
-                            </script>
-			
+  .lib {
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    padding-right: 30px;
+    width: 33%;
+  }
 
-	</body>
-</html>
+  @media (max-width: 600px) {
+    .lib {
+      width: 50%;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .lib {
+      width: 100%;
+    }
+  }
+
+  .lib h {
+    border-bottom: 1px solid #BBB;
+    padding-bottom: 5px;
+    display: block;
+    width: 100%;
+  }
+
+  .lib .lastupdated {
+    font-size: 80%;
+    margin-top: 4px;
+  }
+
+  .lib .github-button {
+    visibility: hidden;
+    float: right;
+    height: 20px;
+  }
+
+  .lib iframe {
+    display: block;
+    float: right;
+  }
+
+  .clear {
+    clear: both;
+  }
+
+  a {
+    color: #4183C4;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .sugggestions {
+    text-align: center;
+  }
+
+  .sugggestions a {
+    color: #777;
+    font-size: 14px;
+  }
+</style>
+
+<header class="container">
+  <img src="q42-logo@2x.png" width="54" height="80" alt=""><h1></h1>
+</header>
+
+<div class="main">
+  <div class="container">
+    <p class="description">
+    </p>
+
+    <iframe 
+      src="https://docs.google.com/forms/d/e/1FAIpQLScXqCA5KU41q5royRkPa4seSbHC8Qc-MaCg9wEcmqGG4xm5JQ/viewform?embedded=true" 
+      width="640" height="1376" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+  </div>
+</div>
+
+<div class="container sugggestions">
+  <p>
+    <a href="http://q42.com">q42.com</a>
+    &mdash;
+    <a href="http://twitter.com/q42">@q42</a>
+  <p>
+    <img src="data:image/png;base64,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" width="32" height="48" alt="">
+</div>
+<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+

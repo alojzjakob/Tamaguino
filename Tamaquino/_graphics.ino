@@ -16,15 +16,12 @@ int grassXPos=0;
 float treesXPos=-20;
 
 // sky
-float couldsXPos=0;
 const int sunRadius=3;
-bool sunOrMoon = false;
+bool previousSkyWasDay = false;
 const int moonShadow=2;
-float sunXPos=-2*sunRadius;
 
-// clouds
-const int cloud1Width=32;
-float cloud1XPos=display.width()+cloud1Width;
+// cloud
+const int cloudWidth=32;
 
 // notification
 int notificationBlink=0;
@@ -39,43 +36,41 @@ void resetDisplay() {
   display.setCursor(0,0);
 }
 
-void drawSunMoon() {
-  sunXPos += 0.1;
-  if(sunXPos > display.width()+2*sunRadius){
-    sunXPos = -2 * sunRadius;
-    sunOrMoon = !sunOrMoon;
+void drawSunMoon(int time) {
+  // day, so just draw sun
+  if (time > dayStartTime) {
+    float xPos = map(time, dayStartTime, 2400, -2 * sunRadius, display.width() + 2 * sunRadius);
+    display.fillCircle(xPos, 2 * sunRadius, sunRadius, WHITE);
+    previousSkyWasDay = true;
+    return;
   }
-  
-  if(sleeping){
-    sunOrMoon = true;
-  }
-  
-  if(!sunOrMoon){
-    display.fillCircle(sunXPos, 2 * sunRadius,sunRadius,WHITE);
-  }else{
-    display.fillCircle(sunXPos, 2 * sunRadius,sunRadius,WHITE);
-    display.fillCircle(sunXPos - moonShadow, 2 * sunRadius,sunRadius,BLACK);
 
-    if(round(cloud1XPos) % 5 == 0){
-      for(int i=0;i<6;i++){
-        stars[i][0]=random(0,display.width());
-        stars[i][1]=random(0,10);
-      }
-    }else{
-      for(int i=0;i<6;i++){
-        
-        display.drawPixel(stars[i][0],stars[i][1],WHITE);
-      }
+  // else it's night, so draw moon and stars
+  float xPos = map(time, 0, dayStartTime, -2 * sunRadius, display.width() + 2 * sunRadius);
+
+  display.fillCircle(xPos, 2 * sunRadius, sunRadius, WHITE);
+  display.fillCircle(xPos - moonShadow, 2 * sunRadius, sunRadius, BLACK);
+
+  // Update star locations if we just switched to night
+  if (previousSkyWasDay){
+    for(int i=0;i<6;i++){
+      stars[i][0]=random(0,display.width());
+      stars[i][1]=random(0,10);
     }
   }
+
+  for (int i = 0; i < 6; i++){
+    display.drawPixel(stars[i][0], stars[i][1], WHITE);
+  }
+
+  previousSkyWasDay = false;
 }
 
 void drawCloud() {
-  cloud1XPos-=0.3;
-  if(cloud1XPos<-cloud1Width){
-    cloud1XPos=display.width()+cloud1Width;
-  }
-  display.drawBitmap(cloud1XPos, 5, cloud2 , cloud1Width, 5, WHITE);
+  int cloudXRange = display.width() + 2 * cloudWidth;
+  int cloudXPos = cloudXRange - (millis() / 500 % cloudXRange) - cloudWidth;
+
+  display.drawBitmap(cloudXPos, 5, cloud , cloudWidth, 5, WHITE);
 }
 
 void drawMountains() {
@@ -88,7 +83,7 @@ void drawDino() {
   }else{
     display.drawBitmap(walkXPos, 29, dinoWalk[walkPos+walkDirOffset] , 48, 24, WHITE);
     if(walkRight){
-      if(round(cloud1XPos) % 3 ==0){
+      if(millis() % 3 ==0){
         display.setCursor(walkXPos+48,36);
         display.print(F("Z"));
       }else{
@@ -96,7 +91,7 @@ void drawDino() {
         display.print(F("z"));
       }
     }else{
-      if(round(cloud1XPos) % 3 ==0){
+      if(millis() % 3 ==0){
         display.setCursor(walkXPos-4,36);
         display.print(F("Z"));
       }else{
@@ -171,18 +166,6 @@ void drawEatAnimation() {
       delay(150);
       display.display();
     }
-  }
-}
-
-void drawDoctorAnimation() {
-  for(int i=0;i<5;i++){
-    display.clearDisplay();
-    if(i%2!=0){
-      display.fillRect(32,23,64,16,WHITE);
-      display.fillRect(56,0,16,64,WHITE);
-    }
-    display.display();
-    delay(300);
   }
 }
 

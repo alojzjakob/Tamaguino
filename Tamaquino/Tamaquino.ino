@@ -15,9 +15,14 @@
 
 const int button1Pin = 9;
 const int button2Pin = 8; 
-const int button3Pin = 7; 
+const int button3Pin = 7;
+const int dayNightCycleSeconds = 240;
+const int dayStartTime = 700;
+// Calculate the millis offset so our program always starts at dawn instead of midnight
+const int millisOffset = 2400.0 / dayStartTime * dayNightCycleSeconds * 1000;
 
 /* ------- PET STATS ------- */
+unsigned long previousUpdateTime = 0;
 
 float energy = 100;
 float happiness = 100;
@@ -40,6 +45,8 @@ void setup() {
   randomSeed(analogRead(0));
 
   setupGraphics();
+
+  Serial.begin(115200);
 }
 
 void loop() {
@@ -56,41 +63,59 @@ void loop() {
     return;
   }
 
-  /* -------- MODIFY PET STATS -------- */
-  if (energy > 0) {
-    energy -= sleeping ? 0.00005 : 0.00025;
-  }
+  // Calculate time from 0 to 2400
+  int time = ((millis() + millisOffset) % (dayNightCycleSeconds * 1000)) * (2400.0 / (dayNightCycleSeconds * 1000.0));
 
-  if (happiness > 0) {
-    happiness -= sleeping ? 0.0002 : 0.0001;
-  }
+  // Update stats once per second
+  if (previousUpdateTime + 1000 < millis()) {
+    if (energy > 0) {
+      energy -= sleeping ? 0.0003 : 0.0015;
+    }
 
-  poopometer += sleeping ? 0.00005 : 0.00025;
+    if (happiness > 0) {
+      happiness -= sleeping ? 0.0012 : 0.0006;
+    }
 
-  if(poopometer >= 100){
-    int poopNumber = countPoops();
-    poopCoordinates[round(poopNumber)]=random(20,DISPLAY_WIDTH+32);
-    poopometer=0;
-  }
+    poopometer += sleeping ? 0.0005 : 0.0025;
 
-  if(energy <= 0 && happiness <= 0){
-    dead=true;
+    if(poopometer >= 100 && countPoops() < 3){
+      int poopNumber = countPoops();
+      poopCoordinates[poopNumber]=random(20,DISPLAY_WIDTH+32);
+      poopometer=0;
+    }
+
+    if(energy <= 0 && happiness <= 0){
+      dead=true;
+    }
+
+    /* ------- DEBUG ------- */
+    Serial.print(energy);
+    Serial.print('\t');
+    Serial.print(happiness);
+    Serial.print('\t');
+    Serial.print(poopometer);
+    Serial.println();
+
+    previousUpdateTime = millis();
   }
   
   /* ------- BUTTON 1 - Food ------- */
   if(digitalRead(button1Pin) == LOW){
     drawEatAnimation();
 
-    if (energy < 100) {
-      energy += 20;
+    energy += 20;
+    if (energy > 100) {
+      energy = 100;
     }
     
-    poopometer += 0.05;
+    poopometer += 0.1 * energy;
   }
   /* ------- BUTTON 2 - Attention ------- */
   if(digitalRead(button2Pin) == LOW){
-    if (happiness < 100) {
-      happiness += 15;
+    happiness += 15;
+
+    if (happiness > 100) {
+      happiness = 100;
     }
   }
   /* ------- BUTTON 3 - Cleanup ------- */
@@ -100,7 +125,7 @@ void loop() {
 
   resetDisplay();
 
-  drawSunMoon();
+  drawSunMoon(time);
 
   drawCloud();
 

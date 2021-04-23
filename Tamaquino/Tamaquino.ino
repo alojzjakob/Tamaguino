@@ -16,10 +16,10 @@
 const int button1Pin = 9;
 const int button2Pin = 8; 
 const int button3Pin = 7;
-const int dayNightCycleSeconds = 240;
-const int dayStartTime = 700;
+const unsigned long dayNightCycleSeconds = 240;
+const int dayStartTime = 800;
 // Calculate the millis offset so our program always starts at dawn instead of midnight
-const int millisOffset = 2400.0 / dayStartTime * dayNightCycleSeconds * 1000;
+const unsigned long millisOffset = dayStartTime / 2400.0 * dayNightCycleSeconds * 1000;
 
 /* ------- PET STATS ------- */
 unsigned long previousUpdateTime = 0;

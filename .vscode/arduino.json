@@ -1,6 +1,0 @@
-{
-    "configuration": "cpu=atmega328",
-    "board": "arduino:avr:diecimila",
-    "port": "/dev/tty.usbserial-A7006RBB",
-    "sketch": "Tamaquino/Tamaquino.ino"
-}

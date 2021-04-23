@@ -69,14 +69,14 @@ void loop() {
   // Update stats once per second
   if (previousUpdateTime + 1000 < millis()) {
     if (energy > 0) {
-      energy -= sleeping ? 0.0003 : 0.0015;
+      energy -= sleeping ? 0.0009 : 0.0045;
     }
 
     if (happiness > 0) {
-      happiness -= sleeping ? 0.0012 : 0.0006;
+      happiness -= sleeping ? 0.0036 : 0.0018;
     }
 
-    poopometer += sleeping ? 0.0005 : 0.0025;
+    poopometer += sleeping ? 0.0005 : 0.0035;
 
     if(poopometer >= 100 && countPoops() < 3){
       int poopNumber = countPoops();

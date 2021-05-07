@@ -73,6 +73,10 @@ void loop() {
   if (previousUpdateTime + 1000 < millis()) {
     if (energy > 0) {
       energy -= sleeping ? 0.0009 : 0.0045;
+
+      if (energy < 0) {
+        energy = 0;
+      }
     }
 
     if (happiness > 0) {
@@ -85,6 +89,10 @@ void loop() {
       if (countPoops() > 0 && !sleeping) {
         happiness -= 0.0024;
       }
+
+      if (happiness < 0) {
+        happiness = 0;
+      }
     }
 
     poopometer += sleeping ? 0.001 : 0.005;
@@ -95,7 +103,7 @@ void loop() {
       poopometer = 0;
     }
 
-    if (energy <= 0 && happiness <= 0) {
+    if (energy == 0 && happiness == 0) {
       dead = true;
     }
 
@@ -142,7 +150,7 @@ void loop() {
 
   drawMountains();
 
-  drawDino();
+  drawDino(energy / 100);
 
   drawGround();
 

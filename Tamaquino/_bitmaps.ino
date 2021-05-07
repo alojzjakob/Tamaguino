@@ -128,11 +128,16 @@ const unsigned char dinoWalk5 [] PROGMEM = {
 };
 
 // Number of frames in the walking animation
-#define WALKSIZE 6
+#define WALKSIZE 3
 
-const unsigned char* dinoWalk[WALKSIZE] = {
+const unsigned char* dinoWalkRight[WALKSIZE * 2] = {
   dinoWalk0,dinoWalk1,dinoWalk2,
-  dinoWalk3,dinoWalk4,dinoWalk5
+  dinoWalk2,dinoWalk1,dinoWalk0
+};
+
+const unsigned char* dinoWalkLeft[WALKSIZE * 2] = {
+  dinoWalk3,dinoWalk4,dinoWalk5,
+  dinoWalk5,dinoWalk4,dinoWalk3
 };
 
 const unsigned char poop [] PROGMEM = {

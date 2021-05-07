@@ -5,14 +5,11 @@
 Adafruit_SSD1306 display(128, 64);
 
 // walking
-int walkPos = 0;
-int walkXPos = 0;
-bool walkAnimReverse = false;
+float walkXPos = 0;
 bool walkRight = false;
-int walkDirOffset = 2;
 
 // ground
-int grassXPos = 0;
+float grassXPos = 0;
 float treesXPos = -20;
 
 // sky
@@ -77,13 +74,20 @@ void drawCloud() {
 
 void drawMountains() { display.drawBitmap(0, 7, mountains, 128, 16, WHITE); }
 
-void drawDino() {
+void drawDino(float walkingSpeed) {
+  int walkIndex = round(walkXPos) % 6;
+
   if (!sleeping) {
-    display.drawBitmap(walkXPos, 26, dinoWalk[walkPos + walkDirOffset], 48, 24,
-                       WHITE);
+    display.drawBitmap(walkXPos, 26,
+                       walkRight ? dinoWalkRight[walkIndex]
+                                 : dinoWalkLeft[walkIndex],
+                       48, 24, WHITE);
   } else {
-    display.drawBitmap(walkXPos, 29, dinoWalk[walkPos + walkDirOffset], 48, 24,
-                       WHITE);
+    display.drawBitmap(walkXPos, 29,
+                       walkRight ? dinoWalkRight[walkIndex]
+                                 : dinoWalkLeft[walkIndex],
+                       48, 24, WHITE);
+
     if (walkRight) {
       if (millis() % 3 == 0) {
         display.setCursor(walkXPos + 48, 36);
@@ -105,39 +109,21 @@ void drawDino() {
 
   if (walkRight) {
     if (!sleeping) {
-      walkXPos += 1;
-      grassXPos += 2;
-      treesXPos += 0.5;
+      walkXPos += walkingSpeed;
+      grassXPos += 2 * walkingSpeed;
+      treesXPos += 0.5 * walkingSpeed;
     }
     if (walkXPos > 80) {
       walkRight = false;
-      walkDirOffset = 3;
     }
   } else {
     if (!sleeping) {
-      walkXPos -= 1;
-      grassXPos -= 2;
-      treesXPos -= 0.5;
+      walkXPos -= walkingSpeed;
+      grassXPos -= 2 * walkingSpeed;
+      treesXPos -= 0.5 * walkingSpeed;
     }
     if (walkXPos < 0) {
       walkRight = true;
-      walkDirOffset = 0;
-    }
-  }
-
-  if (!sleeping) {
-    if (walkAnimReverse) {
-      --walkPos;
-      if (walkPos == -1) {
-        walkPos = 0;
-        walkAnimReverse = false;
-      }
-    } else {
-      ++walkPos;
-      if (walkPos == 3) {
-        walkPos = 2;
-        walkAnimReverse = true;
-      }
     }
   }
 }

@@ -55,7 +55,7 @@ void loop() {
     drawDead();
     show();
 
-    if(digitalRead(button1Pin)){
+    if(digitalRead(button1Pin) == LOW){
       // Reset (low-level command to go to first line of code)
       asm volatile ("  jmp 0");
     }

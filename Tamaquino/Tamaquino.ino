@@ -65,7 +65,7 @@ void loop() {
     return;
   }
 
-  // Calculate time from 0 to 2400
+  // Calculate game time from 0 to 2400
   int time = ((millis() + millisOffset) % (dayNightCycleSeconds * 1000)) *
              (2400.0 / (dayNightCycleSeconds * 1000.0));
 
@@ -129,6 +129,7 @@ void loop() {
 
     poopometer += 0.1 * energy;
   }
+  
   /* ------- BUTTON 2 - Attention ------- */
   if (digitalRead(button2Pin) == LOW) {
     happiness += 15;
@@ -136,7 +137,11 @@ void loop() {
     if (happiness > 100) {
       happiness = 100;
     }
+
+    // Since we do not yet have an animation for this, use this to 'debounce' the button
+    delay(100);
   }
+
   /* ------- BUTTON 3 - Cleanup ------- */
   if (digitalRead(button3Pin) == LOW) {
     resetPoops();

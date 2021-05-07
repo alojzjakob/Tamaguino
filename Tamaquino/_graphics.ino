@@ -148,7 +148,9 @@ void drawGrass() {
 void drawTrees() { display.drawBitmap(-treesXPos, 23, trees, 112, 20, WHITE); }
 
 void drawEatAnimation() {
+  // Clear the display first
   display.fillRect(0, 0, display.width(), display.height(), BLACK);
+  
   for (int j = 0; j < 3; j++) {
     for (int i = 0; i < 4; i++) {
       display.clearDisplay();

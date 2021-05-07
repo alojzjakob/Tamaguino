@@ -76,18 +76,14 @@ void drawMountains() { display.drawBitmap(0, 7, mountains, 128, 16, WHITE); }
 
 void drawDino(float walkingSpeed) {
   int walkIndex = round(walkXPos) % 6;
+  int drawY = sleeping || walkingSpeed == 0 ? 29 : 26;
 
-  if (!sleeping) {
-    display.drawBitmap(walkXPos, 26,
-                       walkRight ? dinoWalkRight[walkIndex]
-                                 : dinoWalkLeft[walkIndex],
-                       48, 24, WHITE);
-  } else {
-    display.drawBitmap(walkXPos, 29,
-                       walkRight ? dinoWalkRight[walkIndex]
-                                 : dinoWalkLeft[walkIndex],
-                       48, 24, WHITE);
+  display.drawBitmap(walkXPos, drawY,
+                     walkRight ? dinoWalkRight[walkIndex]
+                               : dinoWalkLeft[walkIndex],
+                     48, 24, WHITE);
 
+  if (sleeping) {
     if (walkRight) {
       if (millis() % 3 == 0) {
         display.setCursor(walkXPos + 48, 36);

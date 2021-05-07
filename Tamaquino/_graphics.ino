@@ -2,7 +2,7 @@
 #include <Adafruit_SSD1306.h>
 
 #define OLED_RESET 4
-Adafruit_SSD1306 display(OLED_RESET);
+Adafruit_SSD1306 display(128, 64);
 
 // walking
 int walkPos=0;

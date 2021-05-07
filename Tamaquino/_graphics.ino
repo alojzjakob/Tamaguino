@@ -186,7 +186,7 @@ void drawNotification() {
   display.setCursor(120,30);
   display.println(F("!"));
   if(dead){
-      digitalWrite(13,LOW);
+    digitalWrite(13,LOW);
   }
 }
 

@@ -73,15 +73,23 @@ void loop() {
     }
 
     if (happiness > 0) {
-      happiness -= sleeping ? 0.0036 : 0.0018;
+      happiness -= sleeping ? 0.0016 : 0.0024;
+
+      if (energy < 20) {
+        happiness -= sleeping ? 0.0016 : 0.0024;
+      }
+
+      if (countPoops() > 0 && !sleeping) {
+        happiness -= 0.0024;
+      }
     }
 
-    poopometer += sleeping ? 0.0005 : 0.0035;
+    poopometer += sleeping ? 0.001 : 0.005;
 
     if(poopometer >= 100 && countPoops() < 3){
       int poopNumber = countPoops();
       poopCoordinates[poopNumber]=random(20,DISPLAY_WIDTH+32);
-      poopometer=0;
+      poopometer = 0;
     }
 
     if(energy <= 0 && happiness <= 0){

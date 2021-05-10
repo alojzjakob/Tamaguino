@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<title>Tamaguino workshop door Q42</title>
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+<meta name="twitter:title" content="Tamaguino workshop door Q42" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"
+/>
+<script>
+  var host = "q42.github.io";
+  if (window.location.host == host && window.location.protocol != "https:") {
+    window.location.protocol = "https:";
+  }
+</script>
+<style>
+  * {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol";
+    line-height: 1.5;
+  }
+
+  html {
+    background-color: #f1f1f1;
+    color: #777;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  nav {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.05);
+    padding: 0.25em 2em 0.25em 0.65em;
+  }
+
+  .main {
+    background: white;
+    color: #444;
+    border-top: 1px solid #f1f1f1;
+    border-bottom: 1px solid #f1f1f1;
+    padding-bottom: 100px;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 10px;
+  }
+
+  header {
+    height: 100px;
+  }
+
+  header img {
+    float: left;
+    margin-right: 10px;
+  }
+
+  header h1 {
+    font-weight: 200;
+    float: left;
+    margin-top: 10px;
+  }
+
+  p.description {
+    font-size: 18px;
+  }
+
+  h2 {
+    margin-top: 20px;
+  }
+
+  code {
+		background: rgba(0, 0, 0, 0.05);
+		border-radius: 0.25em;
+		border: solid 1px rgba(0, 0, 0, 0.15);
+		font-family: "Courier New", monospace;
+		font-size: 0.9em;
+		margin: 20px 0;
+    padding: 0.1em 0.45em;
+	}
+
+  pre code {
+    display: block;
+    padding: 0.25em 0.65em;
+  }
+
+  img {
+    margin: 20px 0;
+  }
+
+  .lib-container {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .lib {
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    padding-right: 30px;
+    width: 33%;
+  }
+
+  @media (max-width: 600px) {
+    .lib {
+      width: 50%;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .lib {
+      width: 100%;
+    }
+  }
+
+  .lib h {
+    border-bottom: 1px solid #bbb;
+    padding-bottom: 5px;
+    display: block;
+    width: 100%;
+  }
+
+  .lib .lastupdated {
+    font-size: 80%;
+    margin-top: 4px;
+  }
+
+  .lib .github-button {
+    visibility: hidden;
+    float: right;
+    height: 20px;
+  }
+
+  .lib iframe {
+    display: block;
+    float: right;
+  }
+
+  .clear {
+    clear: both;
+  }
+
+  a {
+    color: #4183c4;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .sugggestions {
+    text-align: center;
+  }
+
+  .sugggestions a {
+    color: #777;
+    font-size: 14px;
+  }
+</style>
+
+<header class="container">
+  <img src="q42-logo@2x.png" width="54" height="80" alt="" />
+  <h1></h1>
+</header>
+
+<div class="main">
+  <div class="container">
+    <h1>Tamaquino</h1>
+    <p class="description">
+      We are going to make a virtual pet, just like the classic 90s Tamagotchis!
+      The code in this workshop is based on
+      <a href="https://alojzjakob.github.io/Tamaguino/" target="_blank">
+        Tamaguino
+      </a>.
+      If you want to further improve your pet after this workshop, you can
+      look at the original project to find some inspiration and tips. You can
+      make it portable, for example!
+    </p>
+
+    <h2>Contents</h2>
+    <nav>
+      <ol>
+        <li><a href="#getting-started">Getting started</a></li>
+        <li><a href="#customizing-software">Customizing the program</a></li>
+      </ol>
+    </nav>
+
+    <h2>First: Editor tips</h2>
+    <p>
+      The Arduino IDE is nice and easy to use, but it misses some handy features
+      most modern editors have. Therefore, we use
+      <a href="https://code.visualstudio.com/" target="_blank">
+        Visual Studio Code
+      </a>
+      with the
+      <a
+        href="https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.vscode-arduino"
+        target="_blank">
+        Arduino extension
+      </a>.
+      Don't worry, you are completely free to use the normal Arduino IDE for
+      this workshop, this is just a handy little tip! If you ever find the
+      Arduino IDE a bit difficult to use, give VSCode a try!
+    </p>
+
+    <h2 id="getting-started">Getting started</h2>
+    <p>
+      Make sure you have the following things by your side:
+      <ul>
+        <li>Arduino with USB cable</li>
+        <li>Breadboard</li>
+        <li>The components we sent you!</li>
+      </ul>
+    </p>
+
+    <h3>Setting up the hardware</h3>
+    <p>
+      Let's first set up the basic hardware to run our version of Tamaguino.
+      Let's look at the following diagram to see how everything should be connected.
+      <b>IMPORTANT</b>: The little OLED screen needs 3.3V, so double check you did not
+      plug it into the 5V of your Arduino. DOUBLE CHECK IT AGAIN. We don't mind if you
+      smoke, but let's not use this little screen for that.
+    </p>
+    <img src="images/tamaquino-base-diagram.svg" width="75%"/>
+
+    <h3>Software</h3>
+    <p>
+      We assume you already have the Arduino IDE (and maybe the VSCode setup from the
+      tips at the top) installed. If not, please do!
+    </p>
+
+    <p>
+      Download the basic setup by going to
+      <a href="https://github.com/Q42/tamaguino">
+        https://github.com/Q42/tamaguino
+      </a>,
+      and choosing 'Download ZIP' under the green 'Code' button. Extract it somewhere
+      on your computer, and open the Tamaquino Arduino project you find in there.
+    </p>
+
+    <p>
+      Before you can upload this code to you Arduino, we need to download and install
+      some libraries. Go to the library manager (Arduino IDE: Sketch -> Inclube Library
+      -> Manage Libraries, VSCode: Ctrl-Shift-P -> Arduino: Library Manager), and find
+      & install the following libraries:
+
+      <ul>
+        <li>Adafruit GFX Library</li>
+        <li>Adafruit SSD1306</li>
+        <li>Adafruit BusIO</li>
+      </ul>
+    </p>
+
+    <p>
+      Now you should be able to upload this code to your Arduino.
+      Make sure you select the right board and port, and upload it!
+    </p>
+
+    <p>
+      Now you should have your own happy little Dino walk around the screen.
+      But beware, it needs care!
+
+      It can go hungry, so you can feed it by clicking the left button.
+      You can spot your Dino being low on energy because it won't walk around that fast anymore.
+
+      After processing all that food it will also make things dirty.
+      You can clean up that shit by clicking the right button.
+
+      It needs attention too. Currently, you can do that by clicking the middle button.
+      But you might notice that nothing seems to happen. That's because we don't have anything yet
+      to show the happiness of Dino, or an animation to show you giving it attention.
+      Let's see how you can improve that!
+    </p>
+
+    <h2 id="customizing-software">Customizing the program</h2>
+    <p>
+      Now, you can customize anything! Let's go through bits of the program to see how it works and
+      how you can add functionality.
+    </p>
+
+    <h3>Customizing the algorithm</h3>
+    <p>
+      Somewhat at the top of our <code>loop()</code>, there is a block of code that
+      updates Dino's stats once per second. It currently has 3 stats: energy, happiness and a poopometer.
+      The first two slowly go down over time, and the third slowly goes up. If energy and happiness both
+      are zero, Dino dies :(
+      The poopometer keeps track of how full Dino's belly is, and pushes one poop out if the meter reaches 100.
+    </p>
+    <p>
+      Of course you can modify this algorithm. For development it might be easier to speed things up a bit.
+      Maybe you think it's a logical thing to give Dino diarrhea if you feed him too much. You can also introduce
+      more stats to make things more realistic, or couple some of the stats to sensor values (more on that later!).
+    </p>
+
+    <h3>Interactions</h3>
+    <p>
+      Below the block of code updating the stats, we have the code that handles button presses. You can couple
+      anything you want to a button! If you have some extra buttons laying around, you can also add more buttons
+      if you want.
+    </p>
+
+    <h3>Drawing simple shapes</h3>
+    <p>
+      All drawing-related code is in the '_graphics.ino' file. To see how simple shapes are drawn,
+      we can look at how the sun and moon are drawn. The sun is simplest, as it is just a filled circle:
+
+      <pre><code>display.fillCircle(xPos, 2 * sunRadius, sunRadius, WHITE);</code></pre>
+
+      It takes an x and y coordinate of the center of the circle, a radius, and a color.
+      Since our display is monochrome, we can only use <code>BLACK</code> and 
+      <code>WHITE</code>.
+    </p>
+
+    <p>
+      To draw the moon, we simply draw the sun with a black circle partly overlapping it.
+      Using sprites costs memory, so as long as we can draw things with primitive shapes, we should!
+
+      <pre><code>display.fillCircle(xPos, 2 * sunRadius, sunRadius, WHITE);
+display.fillCircle(xPos - moonShadow, 2 * sunRadius, sunRadius, BLACK);</code></pre>
+
+      Adafruit has a nice documentation page with
+      <a href="https://learn.adafruit.com/adafruit-gfx-graphics-library/graphics-primitives" target="_blank">
+        all possible primitives and examples.
+      </a>
+      Using a couple of rectangles, we could draw a happiness meter on the side of the screen, for example.
+      But if that's too boring for your tastes, you can look at modifying sprite bitmaps.
+    </p>
+
+    <h3>Drawing bitmaps</h3>
+    <p>
+      There's lots of stuff on the screen that are clearly not primitive shapes. The mountains, trees,
+      Dino itself, and more. Those are all sprite bitmaps.
+      Those bitmaps are defined in the '_bitmaps.ino' file.
+    </p>
+    <p>
+      These large arrays are raw byte arrays and appear quite cryptic, but are luckily not written by hand!
+      There are some converter tools to go from an image file to these arrays. You can see the original
+      images in the /images folder of the folder you extracted at the beginning. Go have a look!
+      For example, this is one of our Dino sprites (but then, you know, much bigger):
+    </p>
+    <img src="images/dino-sprite.jpg" width="100%" alt="Our Dino sprite!"/>
+    <p>
+      You can easily replace or add sprites. If you have some pixelart skills, you can event create your own pet!
+      In case you don't, you can use an existing image and modify it a bit.
+      If you then upload that image to <a href="http://javl.github.io/image2cpp/" target="_blank">image2cpp</a>,
+      it can convert it to a byte array for you. The default settings should work fine. Make sure you
+      add new sprites to the '_bitmaps.ino' file using
+      <code>const unsigned char {spriteName} [] PROGMEM</code>!
+      This makes sure the arrays are stored in the Arduino's flash memory (where the program itself is also stored),
+      which makes sure we do not waste precious SRAM memory, next to that the GFX library only works with bitmaps
+      from <code>PROGMEM</code>.
+    </p>
+    <p>
+      Maybe you can show Dino's happiness by modifying his sprites to make him look sad or a bit down. In that case,
+      be aware that Dino actually has 6 sprites, since we animate him walking around. Three sprites for walking to the
+      left, and another three for walking to the right (sadly our GFX library cannot mirror our sprites).
+    </p>
+    <p>
+      Using sprites you can also show an animation when giving Dino attention, much like the eating animation.
+      Since it is not super critical if the rest of the program is paused for a bit, it is easiest to just work
+      with <code>delay()</code> to show different sprites after each other. You can have a look at
+      the eating animation as an example:
+
+      <pre><code>void drawEatAnimation() {
+  // Clear the display first
+  display.fillRect(0, 0, display.width(), display.height(), BLACK);
+
+  for (int j = 0; j < 3; j++) {
+    for (int i = 0; i < 4; i++) {
+      display.clearDisplay();
+
+      display.drawBitmap(50, 40, steak, 24, 24, WHITE);
+      if (j > 0)
+        display.fillCircle(76, 59, 13, BLACK);
+      if (j == 2)
+        display.fillCircle(60, 63, 13, BLACK);
+
+      display.drawBitmap(80, 24, eating[i], 48, 40, WHITE);
+      delay(150);
+      display.display();
+    }
+  }
+}</code></pre>
+
+      Note the <code>display.display()</code> in the loop. This makes sure the display actually shows what we
+      have drawn.
+    </p>
+  </div>
+</div>
+
+<div class="container sugggestions">
+  <p>
+    <a href="http://q42.com">q42.com</a>
+    &mdash;
+    <a href="http://twitter.com/q42">@q42</a>
+  </p>
+
+  <p>
+    <img
+      src="data:image/png;base64,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"
+      width="32"
+      height="48"
+      alt=""
+    />
+  </p>
+</div>
+
+<script
+  async
+  defer
+  id="github-bjs"
+  src="https://buttons.github.io/buttons.js"
+></script>

@@ -194,7 +194,7 @@
 
     <h2>First: Editor tips</h2>
     <p>
-      The Arduino IDE is nice and easy to use, but it misses some handy features
+      The <a href="https://www.arduino.cc/en/software">Arduino IDE</a> is nice and easy to use, but it misses some handy features
       most modern editors have. Therefore, we use
       <a href="https://code.visualstudio.com/" target="_blank">
         Visual Studio Code
@@ -214,10 +214,15 @@
     <p>
       Make sure you have the following things by your side:
       <ul>
-        <li>Arduino with USB cable</li>
+        <li>Arduino UNO with USB cable</li>
         <li>Breadboard</li>
         <li>The components we sent you!</li>
       </ul>
+    </p>
+
+    <p>
+      Your package should at least include an OLED screen and 3 push buttons for this workshop. So check if you have them.
+      But we've thrown in some extra sensors for you to experiment with ;-) They're not required though.
     </p>
 
     <h3>Setting up the hardware</h3>
@@ -263,6 +268,7 @@
       Make sure you select the right board and port, and upload it!
     </p>
 
+    <h3>It's alive!</h3>
     <p>
       Now you should have your own happy little Dino walk around the screen.
       But beware, it needs care!
@@ -391,6 +397,29 @@ display.fillCircle(xPos - moonShadow, 2 * sunRadius, sunRadius, BLACK);</code></
 
       Note the <code>display.display()</code> in the loop. This makes sure the display actually shows what we
       have drawn.
+    </p>
+  
+    <h2>Troubleshooting</h2>
+    <h3>[Error] Verifying sketch 'Tamaquino/Tamaquino.ino': Exit with code=1</h3>
+    <p>If you have an error like this it is most likely you haven't installed the referenced library yet.</p>
+<pre><code>Verifying...
+  _graphics:2:10: fatal error: Adafruit_SSD1306.h: No such file or directory
+   #include <Adafruit_SSD1306.h>
+            ^~~~~~~~~~~~~~~~~~~~
+  compilation terminated.
+  exit status 1
+  [Warning] Failed to generate IntelliSense configuration.
+  [Error] Verifying sketch 'Tamaquino/Tamaquino.ino': Exit with code=1</code></pre>
+  <p>In this case the SSD1306 library needs to be installed.</p>
+
+    <h3>Error: No such file or directory, cannot open /dev/tty.usbmodem142101</h3>
+    <p>When using Arduino for Visual Studio Code you may need to set the serial port in `.vscode/arduino.json` as follows:
+      
+      <pre><code>      {
+          "board": "arduino:avr:uno",
+          "sketch": "Tamaquino/Tamaquino.ino",
+          "port": "/dev/tty.usbmodem143101"
+      }</code></pre>
     </p>
   </div>
 </div>
